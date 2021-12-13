@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 
-<div class="text-center row m-5">
+<div class="text-center row m-5 d-flex flex-column">
     <table class="cart-table col table-dark table-striped">
         <thead class="bg-dark">
             <tr class="py-5">
@@ -8,88 +8,55 @@
                 <th class="d-none d-md-block">Image</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Total Price</th>
+                <th class="d-flex"><span>Total</span><small>(TVA 10%)</small></th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Html course</td>
-                <td class="d-none d-md-block"d><img src="img/contact.png" style="width: 25px;" alt="image"></td>
-                <td>€13.99</td>
-                <td>
-                    <form action="" method="post" class="form-inline justify-content-center">
-                        <div class="form-group">
-                            <input type="number" name="#" value="1" class="form-control">
-                            <input type="submit" value="Update" class="btn btn-outline-warning">
-                        </div>
-                    </form>
-                </td>
-                <td>€13.99</td>
-                <td><a href="#" class="text-warning">X</a></td>
-            </tr>
-            <tr>
-                <td>Html course</td>
-                <td class="d-none d-md-block"><img src="img/contact.png"  style="width: 25px;" alt="image"></td>
-                <td>€13.99</td>
-                <td>
-                    <form action="" method="post" class="form-inline justify-content-center">
-                        <div class="form-group">
-                            <input type="number" name="#" value="1" class="form-control">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                        </div>
-                    </form>
-                </td>
-                <td>€13.99</td>
-                <td><a href="#">X</a></td>
-            </tr>
-            <tr>
-                <td>Html course</td>
-                <td class="d-none d-md-block"><img src="img/contact.png"  style="width: 25px;" alt="image"></td>
-                <td>€13.99</td>
-                <td>
-                    <form action="" method="post" class="form-inline justify-content-center">
-                        <div class="form-group">
-                            <input type="number" name="#" value="1" class="form-control">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                        </div>
-                    </form>
-                </td>
-                <td>€13.99</td>
-                <td><a href="#">X</a></td>
-            </tr>
-            <tr>
-                <td>Html course</td>
-                <td class="d-none d-md-block"><img src="img/contact.png"  style="width: 25px;" alt="image"></td>
-                <td>€13.99</td>
-                <td>
-                    <form action="" method="post" class="form-inline justify-content-center">
-                        <div class="form-group">
-                            <input type="number" name="#" value="1" class="form-control">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                        </div>
-                    </form>
-                </td>
-                <td>€13.99</td>
-                <td><a href="#">X</a></td>
-            </tr>
-            <tr>
-                <td>Html course</td>
-                <td class="d-none d-md-block"><img src="img/contact.png"  style="width: 25px;" alt="image"></td>
-                <td>€13.99</td>
-                <td>
-                    <form action="" method="post" class="form-inline justify-content-center">
-                        <div class="form-group">
-                            <input type="number" name="#" value="1" class="form-control">
-                            <input type="submit" value="Update" class="btn btn-primary">
-                        </div>
-                    </form>
-                </td>
-                <td>€13.99</td>
-                <td><a href="#">X</a></td>
-            </tr>
+
+            <?php
+                $getCart = $cart->getAllCart();
+                if($getCart) {
+                    $beforeTax = 0;
+                    while($rows = $getCart->fetch()) {
+            ?>
+                        <tr>
+                            <td><?= $rows['courseName'] ?></td>
+                            <td class="d-none d-md-block"d><img src="admin/<?= $rows['image'] ?>" style="width: 25px;" alt="image"></td>
+                            <td>€<?= number_format($rows['amount'], 2, ',', ' ') ?></td>
+                            <td>
+                                <form action="" method="post" class="form-inline justify-content-center">
+                                    <div class="form-group">
+                                        <input type="number" name="quantity" value="<?= $rows['quantity'] ?>" class="form-control">
+                                        <input type="submit" value="Update" class="btn btn-outline-warning">
+                                    </div>
+                                </form>
+                            </td>
+                            <td class="text-left pl-2">€
+                                <?php
+                                    $preTax = $rows['quantity'] * $rows['amount'];
+                                    $beforeTax += $preTax;
+                                    $tax = $preTax*0.1;
+                                    echo number_format(($preTax+$tax), 2, ',', ' ');
+                                ?>
+                             </td>
+                            <td><a href="#" class="text-warning">X</a></td>
+                        </tr>
+            <?php
+                    }
+                }
+            ?>
+
+            
         </tbody>
     </table>
+    <div class="w-100">
+        <div class="text-right float-right py-3 px-4 mt-4 border border-dark">
+            <h3>Before TVA : <small>€<?= $beforeTax ?></small></h3>
+            <small><i>TVA <small>(10%)</small> : </i>€<?= number_format(($beforeTax * 0.1), '2', ',', ' ') ?></small>
+            <h3>Total Amount : <small>€<?= number_format((($beforeTax * 0.1) + $beforeTax), 2, ',', ' ') ?></small></h3>
+        </div>
+    </div>
 </div>
 
     <!-- testing/ delete if not good -->
@@ -103,7 +70,7 @@
                 while($rows = $recommendCourse->fetch()) {
         ?>
                     <div class="shadow-lg m-2 pt-3 rounded">
-                        <a href="#"><img src="admin/<?= $rows['image'] ?>" alt="html" class="w-100 border image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
+                        <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="html" class="w-100 border image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
                         <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
                         <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                         <p>
