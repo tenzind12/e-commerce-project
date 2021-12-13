@@ -14,7 +14,7 @@
                     <h3>WHY BUY FROM US</h3>
                     <ul>
                         <li class="list-unstyled"><a href="#">About Us</a></li>
-                        <li class="list-unstyled"><a href="#">Customer Service</a></li>
+                        <li class="list-unstyled"><a href="contact.php">Customer Service</a></li>
                         <li class="list-unstyled"><a href="#">Privacy Policy</a></li>
                         <li class="list-unstyled"><a href="#">Site Map</a></li>
                         <li class="list-unstyled"><a href="#">Search Terms</a></li>
@@ -23,16 +23,16 @@
                 <div class="col-sm-3">
                     <h3>MY ACCOUNT</h3>
                     <ul>
-                        <li class="list-unstyled"><a href="#">Sign in</a></li>
-                        <li class="list-unstyled"><a href="#">View Cart</a></li>
+                        <li class="list-unstyled"><a href="login.php">Sign in</a></li>
+                        <li class="list-unstyled"><a href="cart.php">View Cart</a></li>
                         <li class="list-unstyled"><a href="#">Wish List</a></li>
                         <li class="list-unstyled"><a href="#">Track my Order</a></li>
-                        <li class="list-unstyled"><a href="#">Help</a></li>
+                        <li class="list-unstyled"><a href="contact.php">Help</a></li>
                 </div>
                 <div class="col-sm-3">
                     <h3>Contact</h3>
                     <p><a href="mailto:support@easylearning.com"> support@easylearning.com</p></a>
-                    <p><a href="#"> www.easylearning.com</p></a>
+                    <p><a href="index.php"> www.easylearning.com</p></a>
                     <h3>FOLLOW US</h3>
                     <ul class=" d-flex flex-wrap justify-content-sm-between">
                         <li class="list-unstyled"><a href="#"><img src="./img/icons/facebook.svg"/></a></li>
