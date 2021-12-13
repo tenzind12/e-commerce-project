@@ -5,7 +5,7 @@
 <div class="main mx-3 mx-lg-0">
 
     <!----------------- FEATURED COURSES ---------------------------->
-    <h2 class="text-light shadow-lg py-4 pl-5 bg-success rounded">FEATURED PRODUCTS</h2>
+    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">FEATURED PRODUCTS</h2>
 
     <div class="d-sm-flex my-4 text-center">
 
@@ -14,10 +14,10 @@
             if($featuredCourse) {
                 while($rows = $featuredCourse->fetch()) {
         ?>
-                    <div class="shadow-lg mx-2 pt-3 border border-light">
+                    <div class="shadow-lg mx-2 pt-3 border border-dark">
                         <a href="preview.php?id=<?= $rows['courseId']?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>" class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
-                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
-                        <p><?= $fm->shortenText($rows['description'], 100) ?></p>
+                        <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
+                        <p class="mt-5"><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
                             <span class="text-danger">€<?= $rows['price'] ?></span>
                         </p>
@@ -33,7 +33,7 @@
     </div>
 
     <!----------------- NEW COURSES ---------------------------->
-    <h2 class="text-light shadow-lg py-4 pl-5 bg-success rounded">NEW PRODUCTS</h2>
+    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">NEW PRODUCTS</h2>
 
     <div class="d-sm-flex my-4 text-center">
 
@@ -42,10 +42,10 @@
             if($newCourse) {
                 while($rows = $newCourse->fetch()) {
         ?>
-                    <div class="shadow-lg mx-2 pt-3 border border-light">
+                    <div class="shadow-lg mx-2 pt-3 border border-dark">
                         <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>"  class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
-                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
-                        <p><?= $fm->shortenText($rows['description'], 100) ?></p>
+                        <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
+                        <p class="mt-5"><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
                             <span class="text-danger">€<?= $rows['price'] ?></span>
                         </p>

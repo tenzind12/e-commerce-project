@@ -10,7 +10,7 @@
           <div class="row-para">
             <!-- <h3 class=" ">HTML</h3> -->
             <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
-            <a href="#" class="image-btns">Add to Cart</a>
+            <a href="#" class="image-btns btn btn-outline-warning">Add to Cart</a>
           </div>
         </div>
       </div>
@@ -90,7 +90,7 @@
         </div>
       </div>
     </div>
-    <p class="mt-5 bg-warning p-5 shadow-lg rounded" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quas nostrum 
+    <p class="mt-5 border border-dark p-5 rounded" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quas nostrum 
       nihil at labore rem nam quo ducimus harum sed aliquid suscipit error ex, ut 
       porro quaerat officia id totam.
     </p>

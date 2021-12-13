@@ -22,21 +22,11 @@
 
 .row-para a {
   text-decoration: none;
-  color: rgb(236, 231, 231);
   padding: 5px;
   border: 1px transparent #000;
-  background-color: rgb(83, 105, 66);
   font-size: 1.3rem;
   border-radius: 15px;
-}
-
-.row-para a:hover {
-  background-color: rgb(156, 196, 111);
-  color: rgb(102, 97, 97);
-}
-
-.row-para a:active {
-  /* #something */
+  font-weight: 400;
 }
 
 /* to place the links in center */

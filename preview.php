@@ -27,20 +27,20 @@
                 <img src="admin/<?= $rows['image'] ?>" alt="course image"/>
             </div>
             <div class="col-sm-7">
-                <h3 class="text-danger"><?= $rows['courseName'] ?></h3>
+                <h3><?= $rows['courseName'] ?></h3>
                 <p class="text-muted small"><?= $fm->shortenText($rows['description'], 100) ?></p>
                 <p>Price: <span class="text-danger">€ <?= $rows['price'] ?> </span></p>
-                <p>Category: <span class="text-danger"><?= $rows['catName'] ?></span></p>
-                <p>Tutor: <span class="text-danger"><?= $rows['tutorName'] ?></span></p>
+                <p>Category: <span class="text-success"><?= $rows['catName'] ?></span></p>
+                <p>Tutor: <span class="text-success"><?= $rows['tutorName'] ?></span></p>
 
                 <form action="" method="post" class="form-inline">
                     <input type="number" name="quantity" value="1"class="form-control"/>
-                    <input type="submit" value="Buy Now" class="btn btn-success ml-3">
+                    <input type="submit" value="Buy Now" class="btn btn-outline-warning ml-3">
                 </form>
             </div>
         </div>
 
-        <h2 class="text-light shadow-lg p-4 bg-success rounded">PRODUCT DETAILS</h2>
+        <h2 class="border border-secondary p-4 bg-dark rounded">PRODUCT DETAILS</h2>
         <div class="my-5">
             <p><?= $rows['description'] ?></p>
         </div>

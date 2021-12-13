@@ -23,14 +23,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/mainstyle.css">
     <link rel="stylesheet" href="css/slider.css">
     <title>Easy learning - Learn at your pace</title>
   </head>
   <body id="bootstrap-overrides">
-      <div class="container-lg bg-light px-3">
+      <div class="container-lg px-3">
           <div class="header_top">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="index.php"><b>Easy learning</b></a>
@@ -62,7 +62,7 @@
                     </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 search--fs" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0 search--fs" type="submit">Search</button>
+                    <button class="btn btn-outline-warning my-2 my-sm-0 search--fs" type="submit">Search</button>
                 </form>
                 </div>
             </nav>

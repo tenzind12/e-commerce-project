@@ -44,7 +44,7 @@ include 'inc/header.php';?>
         <label for="exampleFormControlTextarea1">COMMENTAIRE</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
-      <input type="submit" class="btn btn-outline-success btn-lg float-right" value="SUBMIT" />
+      <input type="submit" class="btn btn-outline-warning btn-lg float-right" value="SUBMIT" />
     </div>
 
     <div class="col-sm-2"></div>
