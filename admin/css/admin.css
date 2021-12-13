@@ -1,0 +1,95 @@
+#adminLogin {
+  background: url(../img/admin-bg.jpg) no-repeat fixed;
+  background-position: bottom right;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+#adminLogin h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #e6eaec;
+}
+
+#adminLogin .form-group input {
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+#login-btn {
+  background: -webkit-linear-gradient(top, rgba(254, 231, 154, 1) 0%, rgba(254, 193, 81, 1) 100%);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 80%) inset;
+  border: 1px solid #f7f6f4;
+  color: #85592e;
+  cursor: pointer;
+  font: bold 15px Arial, sans-serif;
+  height: 35px;
+  width: 120px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+#login-btn:hover {
+  background: -webkit-linear-gradient(top, rgba(254, 193, 81, 1) 0%, rgba(254, 231, 154, 1) 100%);
+}
+
+/* ////////////////////////admin/header.php/////////////////////////////////////////////////// */
+
+/* admin/header.php */
+#bootstrap-overrides {
+  background: url(../img/admin-bg.jpg) no-repeat bottom right/cover fixed;
+  color: white;
+}
+#bootstrap-overrides * {
+  color: white;
+}
+
+/* background for the navbar when screen is small */
+@media (max-width: 991px) {
+  .bg-sm-light {
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+  }
+  button[data-toggle~="collapse"] {
+    background-color: #9dc5c3;
+    background-image: linear-gradient(315deg, #9dc5c3 0%, #5e5c5c 74%);
+  }
+}
+.admin-logos {
+  width: 25px;
+  background: rgba(255, 255, 255, 0.774);
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+nav .nav-item {
+  transition: background 0.2s ease-in-out;
+}
+
+nav .nav-item:hover {
+  background: #7f5a83;
+  background: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  border-radius: 30px 5px 5px 30px;
+}
+
+/* ////////////////////////catAdd.php////////////////////////////////////////////////////////////////////////////// */
+
+/* prettier-ignore */
+#catAdd, #tutorAdd, #courseAdd {
+  background: #2c536448;
+  border-radius: 10px;
+}
+
+input[value="Save"] {
+  height: 25px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+/* prettier-ignore */
+input[value="Save"]:hover {
+  background: linear-gradient(to bottom, rgba(254, 231, 154, 1) 0%, rgba(254, 193, 81, 1));
+}

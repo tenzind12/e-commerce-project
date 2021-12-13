@@ -1,0 +1,68 @@
+/* to make the image group marg-right: 0 */
+#header_bottom {
+  margin-right: 0;
+  padding: 5px 0 5px 15px;
+}
+
+.image-groups {
+  box-shadow: 0 0 5px rgb(107, 105, 105);
+  margin: 5px;
+  /* padding: 2px; */
+}
+
+/* the link buttons in the image four grid */
+.row-para {
+  margin-bottom: 10px;
+  padding: 0 15px;
+}
+
+.row-para p {
+  font-size: 1.5rem;
+}
+
+.row-para a {
+  text-decoration: none;
+  color: rgb(236, 231, 231);
+  padding: 5px;
+  border: 1px transparent #000;
+  background-color: rgb(83, 105, 66);
+  font-size: 1.3rem;
+  border-radius: 15px;
+}
+
+.row-para a:hover {
+  background-color: rgb(156, 196, 111);
+  color: rgb(102, 97, 97);
+}
+
+.row-para a:active {
+  /* #something */
+}
+
+/* to place the links in center */
+#bootstrap-overrides .image-btns {
+  margin-left: calc(50% - 39px);
+}
+
+.slider {
+  position: relative;
+}
+
+.slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/*///////////////////////////////////////////////////////////////////////*/
+
+/* cart.php */
+/* table tr td th */
+/* #bootstrap-overrides table {
+  background: red;
+} */
+
+/* doesnt work; check please */
