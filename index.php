@@ -15,7 +15,7 @@
                 while($rows = $featuredCourse->fetch()) {
         ?>
                     <div class="shadow-lg mx-2 pt-3 border border-light">
-                        <a href="preview.php?id=<?= $rows['courseId']?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>" class="w-100 image-hover" style="width:269px; height:151px"></a>
+                        <a href="preview.php?id=<?= $rows['courseId']?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>" class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
                         <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
                         <p><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
@@ -43,11 +43,11 @@
                 while($rows = $newCourse->fetch()) {
         ?>
                     <div class="shadow-lg mx-2 pt-3 border border-light">
-                        <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>"  class="w-100 image-hover" style="width:269px; height:151px"></a>
+                        <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>"  class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
                         <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
                         <p><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
-                            <span class="text-danger"   >€<?= $rows['price'] ?></span>
+                            <span class="text-danger">€<?= $rows['price'] ?></span>
                         </p>
                         <div class="btn">
                             <a href="preview.php?id=<?= $rows['courseId'] ?>">Details</a>

@@ -93,57 +93,31 @@
 </div>
 
     <!-- testing/ delete if not good -->
-    <h2 class="text-muted border py-4 pl-5 mt-5">FEATURED RECOMMENDED PRODUCTS BASED ON YOUR HISTORY</h2>
+    <h2 class="text-white border bg-secondary py-4 pl-5 mt-5">RECOMMENDED PRODUCTS FOR YOU</h2>
 
     <div class="d-sm-flex my-4 text-center">
 
-        <div class="shadow-lg mx-2 pt-3 border border-light">
-            <a href="#"><img src="img/featured/html.png" alt="html" class="w-75"></a>
-            <h3>Lrem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>
-                <span>€13.99</span>
-            </p>
-            <div class="btn">
-                <a href="#">Details</a>
-            </div>
-        </div>
+        <?php
+            $recommendCourse = $course->getFeaturedCourse();
+            if($recommendCourse) {
+                while($rows = $recommendCourse->fetch()) {
+        ?>
+                    <div class="shadow-lg m-2 pt-3 rounded">
+                        <a href="#"><img src="admin/<?= $rows['image'] ?>" alt="html" class="w-100 border image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
+                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
+                        <p><?= $fm->shortenText($rows['description'], 50) ?></p>
+                        <p>
+                            <span>€<?= $rows['price'] ?></span>
+                        </p>
+                        <div class="btn">
+                            <a href="preview.php?id=<?= $rows['courseId'] ?>">Details</a>
+                        </div>
+                    </div>
+        <?php
+                }
+            }
+        ?>
 
-        <div class="shadow-lg mx-2 pt-3 border border-light">
-            <a href="#"><img src="img/featured/html.png" alt="html" class="w-75"></a>
-            <h3>Lrem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>
-                <span>€13.99</span>
-            </p>
-            <div class="btn">
-                <a href="#">Details</a>
-            </div>
-        </div>
-        
-        <div class="shadow-lg mx-2 pt-3 border border-light">
-            <a href="#"><img src="img/featured/html.png" alt="html" class="w-75"></a>
-            <h3>Lrem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>
-                <span>€13.99</span>
-            </p>
-            <div class="btn">
-                <a href="#">Details</a>
-            </div>
-        </div>
-
-        <div class="shadow-lg mx-2 pt-3 border border-light">
-            <a href="#"><img src="img/featured/html.png" alt="html" class="w-75"></a>
-            <h3>Lrem ipsum</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p>
-                <span>€13.99</span>
-            </p>
-            <div class="btn">
-                <a href="#">Details</a>
-            </div>
-        </div>
     </div>
 
 <?php include 'inc/footer.php'; ?>

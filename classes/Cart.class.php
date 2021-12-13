@@ -24,14 +24,10 @@ class Cart {
             $image = $result['image'];
             $price = $result['price'];
             $date = date('Y-m-d');
-
-        // $query = "INSERT INTO tbl_cart(amount, quantity, date_cart, clientid, `image`, courseId, courseName)
-        //             VALUES ('$price', '$quantity', '$date', '$session_id', '$image', '$id', '$courseName')";
         
         $query = "INSERT INTO `tbl_cart`(`amount`, `quantity`, `date_cart`, `sessionId`, `image`, `courseId`, `courseName`)
                   VALUES ('$price','$quantity','$date','$session_id','$image','$id','$courseName' )";
         $inserted_row = $this->db->insert($query);
-
 
         if($inserted_row) header('location: cart.php');
         else header('Location: 404.php');

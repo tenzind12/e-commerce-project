@@ -67,7 +67,7 @@ class Course {
         }
     }
 
-    // Get all courses ///////////////////////////////////////////////////////
+    // Get all courses inner join tbl_tutor and tbl_category ///////////////////////////////////////////////////////
     public function getAllCourse() {
         $query = "SELECT tbl_course.*, tbl_tutor.tutorName, tbl_category.catName
                   FROM tbl_course
