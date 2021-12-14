@@ -16,8 +16,8 @@
 
             <?php
                 $getCart = $cart->getAllCart();
+                $beforeTax = 0;
                 if($getCart) {
-                    $beforeTax = 0;
                     while($rows = $getCart->fetch()) {
             ?>
                         <tr>

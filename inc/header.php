@@ -44,7 +44,7 @@
                             <a class="nav-link" href="index.php">Course</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="cart.php">Cart<span class="no_product">(vide)</span></a>
+                            <a class="nav-link" href="cart.php">Cart (<span class="text-warning">0</span>)</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
