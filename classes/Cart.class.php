@@ -37,8 +37,8 @@ class Cart {
                   VALUES ('$price','$quantity','$date','$session_id','$image','$id','$courseName' )";
         $inserted_row = $this->db->insert($finalQuery);
 
-        if($inserted_row) header('location: cart.php');
-        else header('Location: 404.php');
+        if($inserted_row) echo "<script>window.location='cart.php';</script>";
+        else echo "<script>window.location='404.php';</script>";
 
     }
 
@@ -47,6 +47,21 @@ class Cart {
         $query = "SELECT * FROM tbl_cart WHERE sessionId = '$sId' ";
         $result = $this->db->select($query);
         return $result;
+    }
+
+    public function updateQty($cartId, $quantity) {
+        $cartId = $this->fm->validation($cartId);
+        $quantity = $this->fm->validation($quantity);
+        $query = "UPDATE tbl_cart SET quantity = '$quantity' WHERE cartId = '$cartId'";
+        $updateCart = $this->db->update($query);
+
+        if($updateCart) {
+            $msg = "<p class='text-success text-left'>Your course quantity is updated !</p>";
+            return $msg;
+        }else {
+            $msg = "<p class='text-danger text-left'>Course quantity could not be updated !</p>";
+            return $msg;
+        }
     }
 
     

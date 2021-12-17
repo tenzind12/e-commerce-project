@@ -1,9 +1,20 @@
 <?php include 'inc/header.php'; ?>
 
+<?php
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $quantity = $_POST['quantity'];
+        $cartId = $_POST['cartId'];
+
+        $updateQty = $cart->updateQty($cartId, $quantity);
+    }
+?>
+
 <div class="text-center row m-5 d-flex flex-column">
+    <?= isset($updateQty) ? $updateQty : "" ?>
     <table class="cart-table col table-dark table-striped">
         <thead class="bg-dark">
             <tr class="py-5">
+
                 <th>Course</th>
                 <th class="d-none d-md-block">Image</th>
                 <th>Price</th>
@@ -27,6 +38,7 @@
                             <td>
                                 <form action="" method="post" class="form-inline justify-content-center">
                                     <div class="form-group">
+                                        <input type="hidden" name="cartId" value="<?= $rows['cartId'] ?>">
                                         <input type="number" name="quantity" value="<?= $rows['quantity'] ?>" class="form-control">
                                         <input type="submit" value="Update" class="btn btn-outline-warning">
                                     </div>
