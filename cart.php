@@ -1,16 +1,26 @@
 <?php include 'inc/header.php'; ?>
 
 <?php
+    // deleting course from cart
+    if(isset($_GET['delCart'])) {
+        $cartId = $_GET['delCart'];
+        $delCart = $cart->deleteCart($cartId);
+    }
+?>
+<?php
+    // updating the quantity of course in cart
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $quantity = $_POST['quantity'];
         $cartId = $_POST['cartId'];
 
         $updateQty = $cart->updateQty($cartId, $quantity);
+        if($quantity <= 0) $delCart = $cart->deleteCart($cartId);
     }
 ?>
 
 <div class="text-center row m-5 d-flex flex-column">
     <?= isset($updateQty) ? $updateQty : "" ?>
+    <?= isset($delCart) ? $delCart : "" ?>
     <table class="cart-table col table-dark table-striped">
         <thead class="bg-dark">
             <tr class="py-5">
@@ -49,17 +59,19 @@
                                     $preTax = $rows['quantity'] * $rows['amount'];
                                     $beforeTax += $preTax;
                                     $tax = $preTax*0.1;
-                                    echo number_format(($preTax+$tax), 2, ',', ' ');
+                                    $total = number_format(($preTax+$tax), 2, ',', ' ');
+                                    echo $total;
+
+                                    Session::set("totalAmnt", $total);
                                 ?>
                              </td>
-                            <td><a href="#" class="text-warning">X</a></td>
+                            <td><a onclick="return confirm('Are you sure to delete the course?') " href="?delCart=<?= $rows['cartId'] ?>" class="text-warning">X</a></td>
                         </tr>
             <?php
                     }
                 }
             ?>
 
-            
         </tbody>
     </table>
     <div class="w-100">

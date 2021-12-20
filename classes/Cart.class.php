@@ -42,6 +42,7 @@ class Cart {
 
     }
 
+    // getting the cart by session id
     public function getAllCart() {
         $sId = session_id();
         $query = "SELECT * FROM tbl_cart WHERE sessionId = '$sId' ";
@@ -49,6 +50,7 @@ class Cart {
         return $result;
     }
 
+    // updating the qty of course in cart
     public function updateQty($cartId, $quantity) {
         $cartId = $this->fm->validation($cartId);
         $quantity = $this->fm->validation($quantity);
@@ -64,8 +66,17 @@ class Cart {
         }
     }
 
-    
-
+    // deleting the course from cart
+    public function deleteCart($cartId) {
+        $query = "DELETE FROM tbl_cart WHERE cartId = '$cartId'";
+        $deleteCart = $this->db->delete($query);
+        if($deleteCart) {
+            echo "<script>window.location = 'cart.php'; </script>";
+        }else {
+            $msg = "<p class='text-danger text-left'>Course could not be removed !</p>";
+            return $msg;
+        }
+    }
 }
 
 ?>
