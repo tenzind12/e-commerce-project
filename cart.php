@@ -17,6 +17,12 @@
         if($quantity <= 0) $delCart = $cart->deleteCart($cartId);
     }
 ?>
+<?php
+    if(!isset($_GET['id'])) {
+        echo "<meta http-equiv='refresh'/>";
+    }
+?>
+
 
 <div class="text-center row m-5 d-flex flex-column">
     <?= isset($updateQty) ? $updateQty : "" ?>
@@ -37,9 +43,18 @@
 
             <?php
                 $getCart = $cart->getAllCart();
-                $beforeTax = 0;
+                $beforeTaxAmount = 0;
                 if($getCart) {
                     while($rows = $getCart->fetch()) {
+                        // amount before tax --individual line
+                        $preTax = $rows['quantity'] * $rows['amount'];
+                        // amount of tax     --individual line
+                        $tax = $preTax*0.1;
+                        $total = $preTax + $tax;
+                        // total before tax  --individual line
+                        $beforeTaxAmount += $preTax;
+                        $totalTax = $beforeTaxAmount * 0.1;
+                        $totalAfterTax = $beforeTaxAmount + $totalTax;
             ?>
                         <tr>
                             <td><?= $rows['courseName'] ?></td>
@@ -54,17 +69,7 @@
                                     </div>
                                 </form>
                             </td>
-                            <td class="text-left pl-2">€
-                                <?php
-                                    $preTax = $rows['quantity'] * $rows['amount'];
-                                    $beforeTax += $preTax;
-                                    $tax = $preTax*0.1;
-                                    $total = number_format(($preTax+$tax), 2, ',', ' ');
-                                    echo $total;
-
-                                    Session::set("totalAmnt", $total);
-                                ?>
-                             </td>
+                            <td class="text-left pl-2">€<?= number_format($total, 2, ',', ' ');?></td>
                             <td><a onclick="return confirm('Are you sure to delete the course?') " href="?delCart=<?= $rows['cartId'] ?>" class="text-warning">X</a></td>
                         </tr>
             <?php
@@ -76,9 +81,16 @@
     </table>
     <div class="w-100">
         <div class="text-right float-right py-3 px-4 mt-4 border border-dark">
-            <h3>Before TVA : <small>€<?= $beforeTax ?></small></h3>
-            <small><i>TVA <small>(10%)</small> : </i>€<?= number_format(($beforeTax * 0.1), '2', ',', ' ') ?></small>
-            <h3>Total Amount : <small>€<?= number_format((($beforeTax * 0.1) + $beforeTax), 2, ',', ' ') ?></small></h3>
+            <?php
+            if(isset($totalAfterTax)) {
+                Session::set('totalPrice', $totalAfterTax);
+             ?>
+                <h3>Before TVA : <small>€<?= $beforeTaxAmount ?></small></h3>
+                <small><i>TVA <small>(10%)</small> : </i>€<?= number_format($totalTax, '2', ',', ' ') ?></small>
+                <h3>Total Amount : <small>€<?= number_format($totalAfterTax, 2, ',', ' ') ?></small></h3>
+                <?php
+            }
+            ?>
         </div>
     </div>
 </div>

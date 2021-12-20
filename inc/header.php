@@ -47,7 +47,7 @@
                             <a class="nav-link" href="cart.php">Cart <span class="badge  badge-danger">
                                 <?php
                                 $data = $cart->getAllCart();
-                                if($data) echo "€ ".Session::get('totalAmnt');
+                                if($data) echo "€ ".number_format(Session::get('totalPrice'), 2, ',', ' ');
                                 else echo "Empty";
                                 ?>
                             </span></a>

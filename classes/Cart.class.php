@@ -58,8 +58,8 @@ class Cart {
         $updateCart = $this->db->update($query);
 
         if($updateCart) {
-            $msg = "<p class='text-success text-left'>Your course quantity is updated !</p>";
-            return $msg;
+            // i use this to update the value in cart menu
+            echo "<script>window.location='cart.php';</script>";
         }else {
             $msg = "<p class='text-danger text-left'>Course quantity could not be updated !</p>";
             return $msg;
