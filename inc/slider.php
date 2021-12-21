@@ -4,95 +4,125 @@
     <div class="four-grid row">
       
       <!-- each sections -->
-      <div class="image-groups col-sm rounded">
-        <div class="row">
-          <a href="#"><img src="img/html.jpg" alt="image broken" class="image-hover rounded"/></a>
-          <div class="row-para">
-            <!-- <h3 class=" ">HTML</h3> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
-            <a href="#" class="image-btns btn btn-outline-warning">Add to Cart</a>
-          </div>
-        </div>
-      </div>
+      <?php
+        $php = $course->getCourseByName('php');
+        if($php) {
+          while($rows = $php->fetch()) {
+      ?>
+            <div class="image-groups col-sm rounded">
+              <div class="row">
+                <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
+                <div class="row-para">
+                  <!-- <h3 class=" ">HTML</h3> -->
+                  <p><?= $fm->shortenText($rows['description'], 50) ?></p>
+                  <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+      <?php
+          }
+        }
+      ?>
       
       <!-- each sections -->
-      <div class="image-groups col-sm rounded">
-        <div class="row">
-          <a href="#"><img src="img/css.jpg" alt="image broken" class="image-hover rounded" /></a>
-          <div class="row-para">
-            <!-- <h3 class=" ">HTML</h3> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
-            <a href="#" class="image-btns">Add to Cart</a>
-          </div>
-        </div>  
-      </div>
+      <?php
+        $reactJs = $course->getCourseByName('react js');
+        if($reactJs) {
+          while($rows = $reactJs->fetch()) {
+      ?>
+            <div class="image-groups col-sm rounded">
+              <div class="row">
+                <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
+                <div class="row-para">
+                  <!-- <h3 class=" ">HTML</h3> -->
+                  <p><?= $fm->shortenText($rows['description'], 50) ?></p>
+                  <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+      <?php
+          }
+        }
+      ?>
 
       <div class="w-100"></div>
       
       <!-- each sections -->
-      <div class="image-groups col-sm rounded">
-        <div class="row">
-          <a href="#"><img src="img/react.jpg" alt="image broken" class="image-hover rounded" /></a>
-          <div class="row-para">
-            <!-- <h3 class=" ">HTML</h3> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
-            <a href="#" class="image-btns">Add to Cart</a>
-          </div>
-        </div>
-      </div>
+      <?php
+        $html = $course->getCourseByName('html');
+        if($html) {
+          while($rows = $html->fetch()) {
+      ?>
+            <div class="image-groups col-sm rounded">
+              <div class="row">
+                <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
+                <div class="row-para">
+                  <!-- <h3 class=" ">HTML</h3> -->
+                  <p><?= $fm->shortenText($rows['description'], 50) ?></p>
+                  <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+      <?php
+          }
+        }
+      ?>
 
       <!-- each sections -->
-      <div class="image-groups col-sm rounded">
-        <div class="row">
-          <a href="#"><img src="img/bootstrap.jpg" alt="image broken" class="image-hover rounded" /></a>
-          <div class="row-para">
-            <!-- <h3 class=" ">HTML</h3> -->
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
-            <a href="#" class="image-btns">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-
+      <?php
+        $css = $course->getCourseByName('css');
+        if($css) {
+          while($rows = $css->fetch()) {
+      ?>
+            <div class="image-groups col-sm rounded">
+              <div class="row">
+                <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
+                <div class="row-para">
+                  <!-- <h3 class=" ">HTML</h3> -->
+                  <p><?= $fm->shortenText($rows['description'], 50) ?></p>
+                  <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+      <?php
+          }
+        }
+      ?>
     </div>
   </div>
 
-  <!-- the slider  -->
+  <!------------------------------ the slider  ---------------------------->
   <div class="col-lg m-2">
-    <div class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <!-- the indicator visual -->
       <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <?php for($i = 1; $i <= 5; $i++) {
+          echo "<li data-target='#carouselExampleIndicators' data-slide-to='$i'></li>";
+        } ?>
       </ol>
 
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/html.jpg" alt="First slide">
+        <?php
+          $getImages = $course->getAllCourse();
+          if($getImages) {
+            $i = 0;
+            while($i <= 5 &&  $rows = $getImages->fetch()) {
+              $i++;
+        ?>
+        <div class="carousel-item <?= $i == 1 ? 'active' : '' ?>">
+          <img class="d-block w-100" src="admin/<?= $rows['image'] ?>" style="max-height: 100%">
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/css.jpg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/bootstrap.jpg" alt="Third slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/bootstrap.jpg" alt="Third slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/bootstrap.jpg" alt="Third slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/bootstrap.jpg" alt="Third slide">
-        </div>
+        <?php
+            }
+          }
+        ?>
+
       </div>
     </div>
-    <p class="mt-5 border border-dark p-5 rounded" >Go deeper and learn job-ready
+    <p class="mt-5 border border-dark p-5 rounded"><em>Go deeper and learn job-ready
        skills with our Pro-exclusive Paths. Earn a certificate of completion for 
-       every Path finished.
+       every Path finished.</em>
     </p>
   </div>
 </div>

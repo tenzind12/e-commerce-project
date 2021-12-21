@@ -207,4 +207,11 @@ class Course {
         $result = $this->db->select($query);
         return $result;
     }
+
+    // getting course by courseName
+    public function getCourseByName($courseName) {
+        $query = "SELECT * FROM tbl_course WHERE courseName = '$courseName'";
+        $result = $this->db->select($query);
+        return $result;
+    }
 }
