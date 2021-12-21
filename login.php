@@ -9,7 +9,7 @@
             <div class="form-group w-50">
                 <label for="userId"><small>Sign in with the forms below:</small></label>
                 <input type="text" name="userId" class="form-control mb-2" placeholder="Username">
-                <input type="password" name="password" class="form-control" placeholder="********">
+                <input type="password" name="password" class="form-control" placeholder="•••••••••••••">
             </div>
             <p class="text-muted my-5"><i><small>If you forgot your passoword just enter your email and  <a href="#">click here</i></small></a>.</p>
             <input type="submit" value="Sign in" class="btn-lg btn-dark">

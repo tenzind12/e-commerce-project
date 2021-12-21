@@ -90,9 +90,9 @@
         </div>
       </div>
     </div>
-    <p class="mt-5 border border-dark p-5 rounded" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit quas nostrum 
-      nihil at labore rem nam quo ducimus harum sed aliquid suscipit error ex, ut 
-      porro quaerat officia id totam.
+    <p class="mt-5 border border-dark p-5 rounded" >Go deeper and learn job-ready
+       skills with our Pro-exclusive Paths. Earn a certificate of completion for 
+       every Path finished.
     </p>
   </div>
 </div>

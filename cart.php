@@ -24,7 +24,7 @@
 ?>
 
 
-<div class="text-center row m-5 d-flex flex-column">
+<div class="text-center row m-1 m-sm-5 d-flex flex-column">
     <?= isset($updateQty) ? $updateQty : "" ?>
     <?= isset($delCart) ? $delCart : "" ?>
     <table class="cart-table col table-dark table-striped">
