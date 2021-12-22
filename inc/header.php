@@ -14,7 +14,7 @@
     $db     = new Database();
     $fm     = new Format();
     $course = new Course();
-    $cart    = new Cart();
+    $cart   = new Cart();
 ?>
 
 <!DOCTYPE html>
