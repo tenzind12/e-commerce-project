@@ -31,7 +31,7 @@ include_once ($filepath.'/../config/config.php');
 
         // Reading datas from database
         public function select($query) {
-            $result = $this->link->query($query) or die($this->link->error.__LINE__);
+            $result = $this->link->query($query) or die($this->link->errorCode());
             if($result->rowCount() > 0) return $result;
             else return false;
         }

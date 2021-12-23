@@ -16,7 +16,12 @@
         </form>
     </div>
 
-    <!-- Sign up section -->
+    <!------------------------------ Sign up section ----------------->
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
+            $registration = $user->registration($_POST);
+        }
+    ?>
     <div class="col-sm-7 border border-muted py-3">
         <h2>Register New Account</h2>
         <form action="" method="POST">
@@ -41,8 +46,9 @@
                     <input type="text" name="email" placeholder="E-mail" class="form-control">
                     <input type="text" name="password" placeholder="Password" class="form-control ml-2">
                 </div>
+                <?= isset($registration) ? $registration : "" ?>
 
-                <input type="submit" value="Create Account" class="btn-lg btn-dark my-5">
+                <input type="submit" name="register" value="Create Account" class="btn-lg btn-dark my-5">
             </div>
         </form>
         <p><i><small>By clicking 'Create Account' you agree to the <a href="#">Terms & Conditions</a>.</small></i></p>

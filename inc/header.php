@@ -15,6 +15,7 @@
     $fm     = new Format();
     $course = new Course();
     $cart   = new Cart();
+    $user   = new User();
 ?>
 
 <!DOCTYPE html>
