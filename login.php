@@ -1,4 +1,5 @@
 <?php include 'inc/header.php';?>
+<?php if(Session::get('cusLogin')) header('Location: order.php'); ?>
 
 <div class="row my-5 mx-2">
 

@@ -55,16 +55,26 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Login
+                                Connection
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="login.php">Login</a>
+                                <!-- to dynamically display login logout button -->
+                                <a class="dropdown-item" href="<?= Session::get('cusLogin') ? 'login.php' : '#' ?>">
+                                    <?= Session::get('cusLogin') ? 'Logout' : 'Login' ?>
+                                </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.php">Sign Up</a>
+                                <!-- display signup button according to session -->
+                                <?= !Session::get('cusLogin') ? '<a class="dropdown-item" href="login.php">Sign Up</a>' : '' ?>
+                                
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contact</a>
+                        </li>
+                        <li>
+                            <p class="nav-link">Hello <span class="text-success">
+                                    <?= Session::get('cusName') ? explode(' ',Session::get('cusName'))[0] : 'Guest' ?>
+                            </span></p>
                         </li>
                     </ul>
                 <form class="form-inline my-2 my-lg-0">
