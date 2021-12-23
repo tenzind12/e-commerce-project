@@ -2,17 +2,23 @@
 
 <div class="row my-5 mx-2">
 
-    <!-- sign in section -->
-    <div class="col-sm-5 border border-muted py-3">
+    <!----------------------------- §ign in section ----------------->
+    <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+            $customerLogin = $user->customerLogin($_POST);
+        }
+    ?>
+    <div class="col-sm-5 border border-muted py-3 my-5">
         <h2>Existing Customers</h2>
-        <form action="post" method="">
+        <form action="" method="post">
             <div class="form-group w-50">
-                <label for="userId"><small>Sign in with the forms below:</small></label>
-                <input type="text" name="userId" class="form-control mb-2" placeholder="Username">
+                <label><small>Sign in with the forms below:</small></label>
+                <input type="email" name="email" class="form-control mb-2" placeholder="Username">
                 <input type="password" name="password" class="form-control" placeholder="•••••••••••••">
             </div>
+            <?= isset($customerLogin) ? $customerLogin : "" ?>
+            <input type="submit" name="login" value="Sign in" class="btn-lg btn-dark">
             <p class="text-muted my-5"><i><small>If you forgot your passoword just enter your email and  <a href="#">click here</i></small></a>.</p>
-            <input type="submit" value="Sign in" class="btn-lg btn-dark">
         </form>
     </div>
 
@@ -22,7 +28,7 @@
             $registration = $user->registration($_POST);
         }
     ?>
-    <div class="col-sm-7 border border-muted py-3">
+    <div class="col-sm-7 border border-muted py-3 my-5">
         <h2>Register New Account</h2>
         <form action="" method="POST">
             <div class="form-group">
@@ -54,5 +60,6 @@
         <p><i><small>By clicking 'Create Account' you agree to the <a href="#">Terms & Conditions</a>.</small></i></p>
     </div>
 </div>
+<div class="border-bottom mb-3"></div>
 
 <?php include 'inc/footer.php';?>

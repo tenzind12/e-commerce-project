@@ -69,4 +69,34 @@ class User {
             }
         }
     }
+
+    // for loggin in existing customer
+    public function customerLogin($data) {
+        $email = $this->fm->validation($data['email']);
+        $password = $this->fm->validation($data['password']);
+
+        if(empty($email) || empty($password)) {
+            $msg = "<span class='text-danger d-block'>Please fill both fields</span>";
+            return $msg;
+        }
+
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+            $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
+            return $msg;
+        }
+
+        $query = "SELECT * FROM tbl_customer WHERE email = '$email' AND `password` = md5('$password') ";
+        $result = $this->db->select($query);
+        if($result) {
+            $value = $result->fetch();
+            Session::set('cusLogin', true);
+            Session::set('cusId', $value['clientId']);
+            Session::set('cusName', $value['customerName']);
+            header('Location: order.php');
+        } else {
+            $msg = "<span class='text-danger d-block'>Email or password not correct !</span>";
+            return $msg;
+        }
+
+    }
 }
