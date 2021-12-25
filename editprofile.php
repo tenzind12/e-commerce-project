@@ -6,8 +6,9 @@
     }
 
     $cusId = Session::get('cusId');
+    $addId = Session::get('addId');
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-        $updateInfo = $user->updateCustomerInfo($_POST, $cusId);
+        $updateInfo = $user->updateCustomerInfo($_POST, $cusId, $addId);
     }
 ?>
 
@@ -32,7 +33,7 @@
                             <?= isset($updateInfo) ? $updateInfo : "" ?>
                             <tr>
                                 <td>Name</td>
-                                <td><input type="text" name="customerName" value="<?= $rows['customerName'] ?>"></td>
+                                <td><input type="text" name="name" value="<?= $rows['customerName'] ?>"></td>
                             </tr>
                             <tr>
                                 <td>Phone</td>
