@@ -41,9 +41,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Course</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php">Cart <span class="badge  badge-danger">
                                 <?php
@@ -74,18 +72,27 @@
                                 <div class="dropdown-divider"></div>
                                 <!-- display signup button according to session -->
                                 <?= !Session::get('cusLogin') ? '<a class="dropdown-item" href="login.php">Sign Up</a>' : '' ?>
-                                
                             </div>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="contact.php">Contact</a>
                         </li>
-                        <li>
-                            <p class="nav-link">Hello <span class="text-success">
-                                    <?= Session::get('cusName') ? explode(' ',Session::get('cusName'))[0] : 'Guest' ?>
-                            </span></p>
-                        </li>
+
+                        <!-- show Hello Name if customer is logged in  -->
+                        <?php
+                            if(Session::get('cusLogin') == true) {
+                        ?>
+                                <li>
+                                    <a class="nav-link">Hello <span class="text-success">
+                                            <?= Session::get('cusName') ? explode(' ',Session::get('cusName'))[0] : 'Guest' ?>
+                                    </span></a>
+                                </li>
+                        <?php
+                            }
+                        ?>
                     </ul>
+
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2 search--fs" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-warning my-2 my-sm-0 search--fs" type="submit">Search</button>

@@ -97,6 +97,65 @@ class User {
             $msg = "<span class='text-danger d-block'>Email or password not correct !</span>";
             return $msg;
         }
+    }
 
+    // get all customer details from two tables (tbl_customer and tbl_address)
+    public function getCustomerDetails($id) {
+        $query = "SELECT tbl_customer.*, tbl_address.*
+         FROM tbl_customer 
+         INNER JOIN tbl_address 
+         ON tbl_customer.addressId = tbl_address.addressId";
+
+        $result = $this->db->select($query);
+        return $result;
+    }
+
+
+    // Updating customer information from profile.php
+    public function updateCustomerInfo($data, $id) {
+        // customer table
+        $name     = $this->fm->validation($data['name']);
+        $phone    = $this->fm->validation($data['phone']);
+        $email    = $this->fm->validation($data['email']);
+        $password = $this->fm->validation(md5($data['password']));
+        // address table
+        $address  = $this->fm->validation($data['address']);
+        $city     = $this->fm->validation($data['city']);
+        $country  = $this->fm->validation($data['country']);
+        $zip      = $this->fm->validation($data['zip']);
+
+        if($name == "" || $address == "" || $city == "" || $country == "" || $zip == "" || $phone == "" || $email == "" || $password == "") {
+            $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
+            return $msg;
+        }
+
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+            $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
+            return $msg;
+        }
+
+        
+        // 1. entering data to tbl_address first
+        $addressTableQuery = "INSERT INTO tbl_address(`address`, `zip`, `city`, `country`)
+            VALUES('$address', '$zip', '$city', '$country')";
+        $addressInsert = $this->db->insert($addressTableQuery);
+
+        //2.  fetch tbl_adress for addressId for foreign key
+        $addIdQuery = "SELECT * FROM tbl_address ORDER BY addressId DESC";
+        $result = $this->db->select($addIdQuery)->fetch();
+        $addId = $result['addressId'];
+
+        // 3. entering data into tbl_customer with addressId
+        $customerTableQuery = "INSERT INTO tbl_customer(`customerName`, `email`, `phone`, `password`, `addressId`)
+            VALUES('$name', '$email', '$phone', '$password', '$addId')";
+        $customerInsert = $this->db->insert($customerTableQuery);
+
+        if($addressInsert && $customerInsert) {
+            $msg = "<span class='text-success d-block'>Account successfully created !</span>";
+            return $msg;
+        }else {
+            $msg = "<span class='text-danger d-block'>Account could not be created. Please try again !</span>";
+            return $msg;
+        }
     }
 }
