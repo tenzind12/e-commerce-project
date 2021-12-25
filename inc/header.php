@@ -53,13 +53,17 @@
                                 ?>
                             </span></a>
                         </li>
+
+                        <!-- logout function -->
+                        <?php if(isset($_GET['cusId'])) Session::destroy(); ?>
+                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Connection
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!-- to dynamically display login logout button -->
-                                <a class="dropdown-item" href="<?= Session::get('cusLogin') ? 'login.php' : '#' ?>">
+                                <!-- to dynamically display login logout button  -->
+                                <a class="dropdown-item" href="<?= Session::get('cusLogin') ? '?cusId='.Session::get('cusId') : 'login.php' ?>">
                                     <?= Session::get('cusLogin') ? 'Logout' : 'Login' ?>
                                 </a>
                                 <div class="dropdown-divider"></div>
