@@ -15,7 +15,7 @@ class User {
     }
 
         
-    
+    // --------------------------- new Customer registration
     public function registration($data) {
         // customer table
         $name     = $this->fm->validation($data['name']);
@@ -70,7 +70,7 @@ class User {
         }
     }
 
-    // for loggin in existing customer
+    // --------------------------- for loggin in existing customer
     public function customerLogin($data) {
         $email = $this->fm->validation($data['email']);
         $password = $this->fm->validation($data['password']);
@@ -106,7 +106,7 @@ class User {
         }
     }
 
-    // get all customer details from two tables (tbl_customer and tbl_address)
+    // --------------------------- get all customer details from two tables (tbl_customer and tbl_address)
     public function getCustomerDetails($id) {
         $query = "SELECT tbl_customer.*, tbl_address.*
          FROM tbl_customer 
@@ -119,7 +119,7 @@ class User {
     }
 
 
-    // Updating customer information from profile.php
+    // ---------------------------- Updating customer information from profile.php
     public function updateCustomerInfo($data, $cusId, $addId) {
         // customer table
         $name     = $this->fm->validation($data['name']);
@@ -142,7 +142,7 @@ class User {
         }
 
         
-        // 1. updating tbl_address data first
+        // 1. updating tbl_address data 
         $addressUpdateQuery = "UPDATE tbl_address SET 
                                 `address`        = '$address',
                                 `zip`            = '$zip',
@@ -151,7 +151,7 @@ class User {
                               WHERE addressId  = '$addId' ";
         $addressUpdate = $this->db->update($addressUpdateQuery);
 
-        // 2. entering data into tbl_customer with addressId
+        // 2. updating customer table 
         $customerUpdateQuery = "UPDATE tbl_customer SET
                                 `customerName` = '$name',
                                 `email` = '$email',
