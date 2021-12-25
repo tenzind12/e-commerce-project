@@ -55,8 +55,13 @@
                         </li>
 
                         <!-- logout function -->
-                        <?php if(isset($_GET['cusId'])) Session::destroy(); ?>
-                        
+                        <?php 
+                        if(isset($_GET['cusId'])) {
+                            $delCart = $cart->delAllCart();
+                            Session::destroy();
+                        } 
+                        ?>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Connection

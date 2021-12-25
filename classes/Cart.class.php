@@ -77,6 +77,12 @@ class Cart {
             return $msg;
         }
     }
+
+    public function delAllCart() {
+        $sId = session_id();
+        $query = "DELETE FROM tbl_cart WHERE sessionId = '$sId' ";
+        $this->db->delete($query);
+    }
 }
 
 ?>
