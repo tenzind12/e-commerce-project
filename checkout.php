@@ -1,4 +1,8 @@
-<?php include 'inc/header.php'; ?>
+<?php 
+    include './payment/config.payment.php' ;
+    include 'inc/header.php'; 
+?>
+
 <?php if(Session::get('cusLogin') == false) header('Location: login.php'); ?>
 
 
