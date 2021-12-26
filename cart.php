@@ -94,6 +94,10 @@
         </div>
     </div>
     <p class="text-secondary text-left"><i><small>Warning! Logging out deletes all the products</small></i></p>
+    <div class="d-flex m-auto">
+        <button type="submit" onclick="window.location.href='index.php'" class="btn btn-lg btn-outline-success mr-5">Continue shopping</button>
+        <button type="submit" onclick="window.location.href='checkout.php'" class="btn btn-lg btn-outline-warning ml-5">Check Out</button>
+    </div>
 </div>
 
     <!-- testing/ delete if not good -->
