@@ -167,4 +167,15 @@ class User {
             return $msg;
         }
     }
+
+    // ----------- get customer from tbl_customer and tbl_address together
+    public function getCombinedCusDetails($id) {
+        $query = "SELECT tbl_customer.*, tbl_address.*
+                    FROM tbl_customer 
+                    INNER JOIN tbl_address 
+                    ON tbl_customer.addressId = tbl_address_addressId 
+                    WHERE clientId = '$id' ";
+        $result = $this->db->select($query);
+        return $result;
+    }
 }

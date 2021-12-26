@@ -23,23 +23,25 @@
     }
 ?>
 
-
 <div class="text-center row m-1 m-sm-5 d-flex flex-column">
     <?= isset($updateQty) ? $updateQty : "" ?>
     <?= isset($delCart) ? $delCart : "" ?>
-    <table class="cart-table col table-dark table-striped">
-        <thead class="bg-dark">
-            <tr class="py-5">
 
-                <th>Course</th>
-                <th class="d-none d-md-block">Image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th class="d-flex"><span>Total</span><small>(TVA 10%)</small></th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
+    <form action="checkout.php" method="post" class="form-inline justify-content-center">
+        <table class="cart-table col table-dark table-striped">
+            <thead class="bg-dark">
+
+                <tr class="py-5">
+                    <th>Course</th>
+                    <th class="d-none d-md-block">Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th class="d-flex"><span>Total</span><small>(TVA 10%)</small></th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+            <tbody>
 
             <?php
                 $getCart = $cart->getAllCart();
@@ -61,24 +63,36 @@
                             <td class="d-none d-md-block"d><img src="admin/<?= $rows['image'] ?>" style="width: 25px;" alt="image"></td>
                             <td>€<?= number_format($rows['amount'], 2, ',', ' ') ?></td>
                             <td>
-                                <form action="" method="post" class="form-inline justify-content-center">
-                                    <div class="form-group">
-                                        <input type="hidden" name="cartId" value="<?= $rows['cartId'] ?>">
-                                        <input type="number" name="quantity" value="<?= $rows['quantity'] ?>" class="form-control">
-                                        <input type="submit" value="Update" class="btn btn-outline-warning">
-                                    </div>
-                                </form>
+                                <div class="form-group">
+                                    <input type="hidden" name="cartId" value="<?= $rows['cartId'] ?>">
+                                    <input type="number" name="quantity" value="<?= $rows['quantity'] ?>" class="form-control">
+                                    <input type="submit" value="Update" class="btn btn-outline-warning">
+                                </div>
                             </td>
                             <td class="text-left pl-2">€<?= number_format($total, 2, ',', ' ');?></td>
                             <td><a onclick="return confirm('Are you sure to delete the course?') " href="?delCart=<?= $rows['cartId'] ?>" class="text-warning">X</a></td>
-                        </tr>
+                            </tr>
             <?php
                     }
                 }
             ?>
-
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+            
+        <div>
+            <button type="submit" onclick="window.location.href='index.php'" class="btn btn-lg btn-outline-success mr-5">Continue shopping</button>
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_51KAuPUAKBlCe0kMM28dRBK87PLmH9wZicPdMZCAXopbyM4yRnhy4BTWOL4BdcXoCcHQGRtbc5OgYppgN5qaYo1IP00WXvCGocO"
+                data-amount=<?php echo str_replace(",","",$totalAfterTax) * 100?>
+                data-name="<?php echo $rows['courseName'] ?>"
+                data-description="<?php $rows['description'] ?>"
+                data-image="<?php echo $rows['image']?>"
+                data-currency="eur"
+                data-locale="auto">
+            </script>
+        </div>
+    </form>
     <div class="w-100">
         <div class="text-right float-right py-3 px-4 mt-4 border border-dark">
             <?php
@@ -94,10 +108,7 @@
         </div>
     </div>
     <p class="text-secondary text-left"><i><small>Warning! Logging out deletes all the products</small></i></p>
-    <div class="d-flex m-auto">
-        <button type="submit" onclick="window.location.href='index.php'" class="btn btn-lg btn-outline-success mr-5">Continue shopping</button>
-        <button type="submit" onclick="window.location.href='checkout.php'" class="btn btn-lg btn-outline-warning ml-5">Check Out</button>
-    </div>
+    
 </div>
 
     <!-- testing/ delete if not good -->
