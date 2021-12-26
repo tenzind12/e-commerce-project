@@ -84,7 +84,7 @@
                             if(Session::get('cusLogin') == true) {
                         ?>
                                 <li>
-                                    <a class="nav-link">Hello <span class="text-success">
+                                    <a class="nav-link" href="profile.php">Hello <span class="text-success">
                                             <?= Session::get('cusName') ? explode(' ',Session::get('cusName'))[0] : 'Guest' ?>
                                     </span></a>
                                 </li>

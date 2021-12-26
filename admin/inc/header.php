@@ -41,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active ml-3">
-                            <a class="nav-link" href="#"><img src="img/dashboard.png" alt="site logo" class="admin-logos mr-2 p-1">Dashboard <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="catList.php"><img src="img/dashboard.png" alt="site logo" class="admin-logos mr-2 p-1">Dashboard <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link ml-3" href="#"><img src="img/profile.png" alt="site logo" class="admin-logos mr-2 p-1">User Profile</a>
@@ -50,7 +50,7 @@
                             <a class="nav-link ml-3" href="#"><img src="img/inbox.png" alt="site logo" class="admin-logos mr-2 p-1">Inbox</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link ml-3" href="#"><img src="img/website.png" alt="site logo" class="admin-logos mr-2 p-1">Visit Site</a>
+                            <a class="nav-link ml-3" href="../index.php"><img src="img/website.png" alt="site logo" class="admin-logos mr-2 p-1">Visit Site</a>
                         </li>
                     </ul>
                 </div>
