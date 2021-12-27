@@ -79,7 +79,7 @@
                 if($coursesBought) {
                     while($rows = $coursesBought->fetch()) {
             ?>
-                        <div class="col-sm shadow-lg p-5">
+                        <div class="col-sm-6 shadow-lg p-5">
                             <img src="admin/<?= $rows['image'] ?>" alt="img brkn" class="w-50">
                             <input onclick="location.href='https:\/\/www.youtube.com/results?search_query=<?= $rows['courseName'] ?> programming'" type="button" value="Start Learning" class="btn btn-lg btn-outline-success float-right mt-3 mr-3">
                             <p class="text-justify"><?= $rows['description'] ?></p>
