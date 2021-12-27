@@ -29,8 +29,5 @@ include_once ($filepath.'/../helpers/Format.php');
             $result = $this->db->select($query);
             return $result;
         }
-
-        
     }
-
 ?>
