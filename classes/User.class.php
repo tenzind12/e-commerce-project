@@ -99,7 +99,7 @@ class User {
             Session::set('cusId', $value['clientId']);
             Session::set('cusName', $value['customerName']);
             Session::set('addId', $value['addressId']);
-            header('Location: order.php');
+            header('Location: cart.php');
         } else {
             $msg = "<span class='text-danger d-block'>Email or password not correct !</span>";
             return $msg;

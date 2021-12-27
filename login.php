@@ -1,9 +1,9 @@
 <?php include 'inc/header.php';?>
-<?php if(Session::get('cusLogin')) header('Location: order.php'); ?>
+<?php if(Session::get('cusLogin')) header('Location: cart.php'); ?>
 
 <div class="row my-5 mx-2">
 
-    <!----------------------------- §ign in section ----------------->
+    <!----------------------------- Log in section ----------------->
     <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             $customerLogin = $user->customerLogin($_POST);

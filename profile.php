@@ -74,6 +74,9 @@
             <h2 class="border border-secondary py-4 pl-5 bg-dark rounded text-success">COURSES YOU PURCHASED</h2>
             <div class="row p-3 d-flex justify-content-around">
 
+            <?php
+                // $coursesBought = $order->getAllCourse();
+            ?>
                 <div class="col-sm shadow-lg p-5">
                     <img src="img/bootstrap.jpg" alt="img brkn" class="w-50">
                     <input onclick="location.href='https:\/\/www.youtube.com/results?search_query=bootstrap'" type="button" value="Start Learning" class="btn btn-lg btn-outline-success float-right mt-3 mr-3">

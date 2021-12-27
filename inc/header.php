@@ -16,6 +16,7 @@
     $course = new Course();
     $cart   = new Cart();
     $user   = new User();
+    $order  = new Order();
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +58,7 @@
                         if(isset($_GET['cusId'])) {
                             $delCart = $cart->delAllCart();
                             Session::destroy();
-                        } 
+                        }
                         ?>
 
                         <li class="nav-item dropdown">
