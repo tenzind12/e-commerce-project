@@ -20,6 +20,16 @@ include_once ($filepath.'/../helpers/Format.php');
             echo "<script>location.reload()</script>";
         }
 
+        public function getAllCourse($cliendId) {
+            $query = "SELECT tbl_course.*, tbl_order.* 
+                    FROM tbl_course 
+                    INNER JOIN tbl_order 
+                    ON tbl_order.courseId = tbl_course.courseId 
+                    WHERE tbl_order.clientId = '$cliendId'";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
         
     }
 

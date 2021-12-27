@@ -75,19 +75,21 @@
             <div class="row p-3 d-flex justify-content-around">
 
             <?php
-                // $coursesBought = $order->getAllCourse();
+                $coursesBought = $order->getAllCourse(Session::get('cusId'));
+                if($coursesBought) {
+                    while($rows = $coursesBought->fetch()) {
             ?>
-                <div class="col-sm shadow-lg p-5">
-                    <img src="img/bootstrap.jpg" alt="img brkn" class="w-50">
-                    <input onclick="location.href='https:\/\/www.youtube.com/results?search_query=bootstrap'" type="button" value="Start Learning" class="btn btn-lg btn-outline-success float-right mt-3 mr-3">
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptates cupiditate saepe nesciunt harum tempora eveniet iure quas ex. Quod alias quam sint modi cupiditate, provident nisi maxime pariatur illo!</p>
-                </div>
-
-                <div class="col-sm shadow-lg p-5">
-                    <img src="img/bootstrap.jpg" alt="img brkn" class="w-50">
-                    <input onclick="location.href='https:\/\/www.youtube.com/results?search_query=html'" type="button" value="Start Learning" class="btn btn-lg btn-outline-success float-right mt-3 mr-3">
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptates cupiditate saepe nesciunt harum tempora eveniet iure quas ex. Quod alias quam sint modi cupiditate, provident nisi maxime pariatur illo!</p>
-                </div>
+                        <div class="col-sm shadow-lg p-5">
+                            <img src="admin/<?= $rows['image'] ?>" alt="img brkn" class="w-50">
+                            <input onclick="location.href='https:\/\/www.youtube.com/results?search_query=<?= $rows['courseName'] ?> programming'" type="button" value="Start Learning" class="btn btn-lg btn-outline-success float-right mt-3 mr-3">
+                            <p class="text-justify"><?= $rows['description'] ?></p>
+                        </div>
+            <?php
+                    }
+                } else {
+                    echo "<p class='text-danger'>¯\_(ツ)_/¯  You dont have any course, we got some shoppings to do. <a href='index.php'>Let's Go </a>🤗</p>";
+                }
+            ?>
 
             </div>
         </div>
