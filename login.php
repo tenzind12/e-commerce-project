@@ -1,5 +1,5 @@
 <?php include 'inc/header.php';?>
-<?php if(Session::get('cusLogin')) header('Location: cart.php'); ?>
+<?php if(Session::get('cusLogin')) header('Location: profile.php'); ?>
 
 <div class="row my-5 mx-2">
 
