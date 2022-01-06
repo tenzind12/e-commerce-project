@@ -21,9 +21,6 @@ class Adminlogin {
         $adminUser = $this->fm->validation($adminUser);
         $adminPass = $this->fm->validation($adminPass);
 
-        // $adminUser = mysqli_real_escape_string($this->db->link, $adminUser);
-        // $adminPass = mysqli_real_escape_string($this->db->link, $adminPass);
-
         if(empty($adminUser) || empty($adminPass)) {
             $msg = "<p class='text-danger'>Username / Password cannot be empty.</p>";
             return $msg;

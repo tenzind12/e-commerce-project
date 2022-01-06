@@ -37,11 +37,12 @@ class Cart {
                   VALUES ('$price','$quantity','$date','$session_id','$image','$id','$courseName' )";
         $inserted_row = $this->db->insert($finalQuery);
 
-        if($inserted_row) header('location: cart.php');
-        else header('Location: 404.php');
+        if($inserted_row) echo "<script>window.location='cart.php';</script>";
+        else echo "<script>window.location='404.php';</script>";
 
     }
 
+    // getting the cart by session id
     public function getAllCart() {
         $sId = session_id();
         $query = "SELECT * FROM tbl_cart WHERE sessionId = '$sId' ";
@@ -49,8 +50,39 @@ class Cart {
         return $result;
     }
 
-    
+    // updating the qty of course in cart
+    public function updateQty($cartId, $quantity) {
+        $cartId = $this->fm->validation($cartId);
+        $quantity = $this->fm->validation($quantity);
+        $query = "UPDATE tbl_cart SET quantity = '$quantity' WHERE cartId = '$cartId'";
+        $updateCart = $this->db->update($query);
 
+        if($updateCart) {
+            // i use this to update the value in cart menu
+            echo "<script>window.location='cart.php';</script>";
+        }else {
+            $msg = "<p class='text-danger text-left'>Course quantity could not be updated !</p>";
+            return $msg;
+        }
+    }
+
+    // deleting the course from cart
+    public function deleteCart($cartId) {
+        $query = "DELETE FROM tbl_cart WHERE cartId = '$cartId'";
+        $deleteCart = $this->db->delete($query);
+        if($deleteCart) {
+            echo "<script>window.location = 'cart.php'; </script>";
+        }else {
+            $msg = "<p class='text-danger text-left'>Course could not be removed !</p>";
+            return $msg;
+        }
+    }
+
+    public function delAllCart() {
+        $sId = session_id();
+        $query = "DELETE FROM tbl_cart WHERE sessionId = '$sId' ";
+        $this->db->delete($query);
+    }
 }
 
 ?>

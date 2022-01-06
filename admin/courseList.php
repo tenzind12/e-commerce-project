@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 <?php include 'inc/submenu.php'; ?>
-<?php include '../classes/Course.class.php'; ?>
+<?php include '../core/classes/Course.class.php'; ?>
 
 <?php
 	$course = new Course();

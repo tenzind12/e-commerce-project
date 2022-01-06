@@ -35,7 +35,7 @@
 
                 <form action="" method="post" class="form-inline">
                     <input type="number" name="quantity" value="1"class="form-control"/>
-                    <input type="submit" value="Buy Now" class="btn btn-outline-warning ml-3">
+                    <input type="submit" value="Buy Now" class="btn btn-outline-warning ml-sm-3">
                 </form>
                 <?= isset($addToCart) ? $addToCart : "" ?>
             </div>
