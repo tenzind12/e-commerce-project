@@ -1,14 +1,14 @@
 <?php
-    include_once 'lib/Session.php';
+    include_once 'core/lib/Session.php';
     Session::init();
-    include_once ('lib/Database.php');
+    include_once ('core/lib/Database.php');
 
     $filepath = realpath(dirname(__FILE__));
-    include ($filepath.'/../helpers/Format.php');
+    include ($filepath.'/../core/helpers/Format.php');
 
     spl_autoload_register(function($class) {
         $filepath = realpath(dirname(__FILE__));
-        include_once ($filepath."/../classes/" .$class .".class.php");
+        include_once ($filepath."/../core/classes/" .$class .".class.php");
     });
 
     $db     = new Database();
@@ -26,9 +26,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/mainstyle.css">
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/mainstyle.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
     <title>Easy learning - Learn at your pace</title>
   </head>
   <body id="bootstrap-overrides">

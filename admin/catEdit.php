@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 <?php include 'inc/submenu.php'; ?>
-<?php include '../classes/Category.class.php'; ?>
+<?php include '../core/classes/Category.class.php'; ?>
 
 <?php
     if(!isset($_GET['id']) || $_GET['id'] == NULL) {
