@@ -17,6 +17,7 @@
     $cart   = new Cart();
     $user   = new User();
     $order  = new Order();
+    $search = new Search();
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +81,7 @@
                             <a class="nav-link" href="contact.php">Contact</a>
                         </li>
 
-                        <!-- show Hello Name if customer is logged in  -->
+                        <!-- show Hello { Name } if customer is logged in  -->
                         <?php
                             if(Session::get('cusLogin') == true) {
                         ?>
@@ -93,10 +94,17 @@
                             }
                         ?>
                     </ul>
+                
+                    <!-- Search Bar in the header -->
+                <?php
+                    if(isset($_POST['search'])) {
+                        header("Location: search.php?search=".$_POST['search']);
+                    }
+                ?>
 
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2 search--fs" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-warning my-2 my-sm-0 search--fs" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0" method="post" action="">
+                    <input class="form-control mr-sm-2 search--fs" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <input class="btn btn-outline-warning my-2 my-sm-0 search--fs" type="submit" value="Search"/>
                 </form>
                 </div>
             </nav>

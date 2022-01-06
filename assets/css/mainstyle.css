@@ -129,3 +129,25 @@ img {
   cursor: pointer;
   border-radius: 5px;
 }
+
+/* ////////////////////////END PREVIEW//////////////////////////////////////////////////// */
+
+/* Search page */
+
+#search-page {
+  min-height: 61vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#search-fail-msg {
+  color: #ffc107;
+  font-weight: 100;
+  font-size: 5.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* ////////////////////////END SEARCH PAGE//////////////////////////////////////////////////// */

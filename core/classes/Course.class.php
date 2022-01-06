@@ -82,19 +82,19 @@ class Course {
 
     // Get course by id ///////////////////////////////////////////////////////
     public function getCourseById($id) {
-        $query = "SELECT * FROM tbl_course WHERE courseId = '$id' ";
+        $query  = "SELECT * FROM tbl_course WHERE courseId = '$id' ";
         $result = $this->db->select($query);
         return $result;
     }
 
     // Update course ///////////////////////////////////////////////////////
     public function updateCourse($data, $file, $id) {
-        $courseName = $this->fm->validation($data['courseName']);
-        $catId = $this->fm->validation($data['catId']);
-        $tutorId = $this->fm->validation($data['tutorId']);
-        $description = $this->fm->validation($data['description']);
-        $price = $this->fm->validation($data['price']);
-        $courseType = $this->fm->validation($data['courseType']);
+        $courseName     = $this->fm->validation($data['courseName']);
+        $catId          = $this->fm->validation($data['catId']);
+        $tutorId        = $this->fm->validation($data['tutorId']);
+        $description    = $this->fm->validation($data['description']);
+        $price          = $this->fm->validation($data['price']);
+        $courseType     = $this->fm->validation($data['courseType']);
 
         if($courseName == "" || $catId == "" || $tutorId == "" || $description == "" || $price == "" || $courseType == "") {
             $msg = "<p class='text-danger'>All the fields should be filled</p>";
