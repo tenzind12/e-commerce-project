@@ -1,0 +1,33 @@
+.comment-slider {
+  position: relative;
+  min-height: 20rem;
+  height: 30rem;
+  max-width: 50rem;
+  display: flex;
+  margin: 0 auto;
+  place-items: center;
+  overflow: hidden;
+}
+
+.comment-slider .c__slide {
+  position: absolute;
+  width: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dots__dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 1rem;
+  cursor: pointer;
+}

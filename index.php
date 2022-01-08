@@ -59,6 +59,62 @@
         ?>
 
     </div>
+
+    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">CUSTOMER FEEDBACKS</h2>
+
+    <!------------- SLIDER ------------>
+    <div class="my-4 text-center comment-slider">
+        <div class="c__slide slide--1">
+            <div class="testimonial">
+                <h2>Best decision ever</h2>
+                <blockquote>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
+                    porro, error possimus voluptas atque similique dignissimos voluptates
+                    quod in id fugit!
+                </blockquote>
+                <address>
+                    <h6>Customer Name</h6>
+                    <p>CityName <span>country</span></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="c__slide slide--2">
+            <div class="testimonial">
+                <h2>worst decision ever</h2>
+                <blockquote>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
+                    porro, error possimus voluptas atque similique dignissimos voluptates
+                    quod in id fugit!
+                </blockquote>
+                <address>
+                    <h6>Customer Name</h6>
+                    <p>Paris <span>France</span></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="c__slide slide--3">
+            <div class="testimonial">
+                <h2>Best decision ever</h2>
+                <blockquote>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
+                    porro, error possimus voluptas atque similique dignissimos voluptates
+                    quod in id fugit!
+                </blockquote>
+                <address>
+                    <h6>Customer Name</h6>
+                    <p>CityName <span>country</span></p>
+                </address>
+            </div>
+        </div>
+
+        <div class="dots"></div>
+    </div>
+    
 </div>
 
 

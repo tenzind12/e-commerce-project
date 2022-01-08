@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/mainstyle.css">
     <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/comment--slider.css">
     <title>Easy learning - Learn at your pace</title>
   </head>
   <body id="bootstrap-overrides">
