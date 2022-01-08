@@ -1,7 +1,7 @@
 <div class="row my-3" id="header_bottom">
   <!-- first section before the slide -->
   <div class="col-lg header_bottom_left d-none d-sm-block">
-    <div class="four-grid row">
+    <div class="row">
       
       <!-- each sections -->
       <?php
@@ -12,7 +12,7 @@
             <div class="image-groups col-sm rounded">
               <div class="row">
                 <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
-                <div class="row-para">
+                <div class="row-para mt-2">
                   <!-- <h3 class=" ">HTML</h3> -->
                   <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                   <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
@@ -33,7 +33,7 @@
             <div class="image-groups col-sm rounded">
               <div class="row">
                 <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
-                <div class="row-para">
+                <div class="row-para mt-2">
                   <!-- <h3 class=" ">HTML</h3> -->
                   <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                   <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
@@ -56,7 +56,7 @@
             <div class="image-groups col-sm rounded">
               <div class="row">
                 <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
-                <div class="row-para">
+                <div class="row-para mt-2">
                   <!-- <h3 class=" ">HTML</h3> -->
                   <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                   <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>
@@ -77,7 +77,7 @@
             <div class="image-groups col-sm rounded">
               <div class="row">
                 <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="image broken" class="image-hover rounded"/></a>
-                <div class="row-para">
+                <div class="row-para mt-2">
                   <!-- <h3 class=" ">HTML</h3> -->
                   <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                   <a href="preview.php?id=<?= $rows['courseId'] ?>" class="image-btns btn btn-outline-warning">Add to Cart</a>

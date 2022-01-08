@@ -24,20 +24,18 @@ html {
 
 /* body  */
 body {
-  background: black; /* fallback for old browsers */
-  background-color: #000000;
-  background-image: linear-gradient(-315deg, #000000 0%, #2c3e50 74%);
+  background: url(../../img/bg.jpg) center/cover fixed;
 }
 
 #bootstrap-overrides .main-container {
-  background-color: #292b2c;
-  background-image: linear-gradient(315deg, #2d3436 0%, #131212 74%);
+  background-color: #000000c0;
+  /* background-image: linear-gradient(315deg, #2d3436 0%, #131212 74%); */
   color: white;
 }
 
 @media (min-width: 1200px) {
   #bootstrap-overrides .main-container {
-    margin: 0 8rem;
+    margin: 0 15rem;
   }
 }
 
@@ -82,6 +80,7 @@ img {
   font-size: 1.5rem;
 }
 
+/* all images of courses animation transition */
 .image-hover {
   transition: all 0.2s ease-in-out;
 }
