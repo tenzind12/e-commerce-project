@@ -100,7 +100,7 @@
             ?>
         </div>
     </div>
-    <p class="text-secondary text-left"><i><small><span class='text-danger'>NOTE!</span> Logging out deletes all the cart</small></i></p>
+    <!-- <p class="text-secondary text-left"><i><small><span class='text-danger'>NOTE!</span> Logging out deletes all the cart</small></i></p> -->
     <div class="d-flex m-auto">
         <button type="submit" onclick="window.location.href='index.php'" class="btn btn-lg btn-outline-success mr-5">Continue shopping</button>
         <!-- show paypal btton only when logged in -->
