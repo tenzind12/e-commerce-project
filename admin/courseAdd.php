@@ -1,8 +1,8 @@
 <?php include 'inc/header.php'; ?>
 <?php include 'inc/submenu.php'; ?>
-<?php include '../classes/Course.class.php'; ?>
-<?php include '../classes/Category.class.php'; ?>
-<?php include '../classes/Tutor.class.php'; ?>
+<?php include '../core/classes/Course.class.php'; ?>
+<?php include '../core/classes/Category.class.php'; ?>
+<?php include '../core/classes/Tutor.class.php'; ?>
 
 <?php 
     $course = new Course();

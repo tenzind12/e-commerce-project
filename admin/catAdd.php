@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 <?php include 'inc/submenu.php'; ?>
-<?php include '../classes/Category.class.php'; ?>
+<?php include '../core/classes/Category.class.php'; ?>
 
 <?php
     $cat = new Category();

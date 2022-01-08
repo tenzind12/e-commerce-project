@@ -1,5 +1,4 @@
-<?php
-include 'inc/header.php';?>
+<?php include 'inc/header.php';?>
 
 <div class="main my-5 py-5 px-3">
   <!-- first section -->
