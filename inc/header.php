@@ -33,7 +33,7 @@
     <title>Easy learning - Learn at your pace</title>
   </head>
   <body id="bootstrap-overrides">
-      <div class="container-lg px-3">
+      <div class=main-container px-3">
           <div class="header_top">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="index.php"><b>Easy learning</b></a>

@@ -29,10 +29,16 @@ body {
   background-image: linear-gradient(-315deg, #000000 0%, #2c3e50 74%);
 }
 
-#bootstrap-overrides .container-lg {
-  background-color: #2d3436;
+#bootstrap-overrides .main-container {
+  background-color: #292b2c;
   background-image: linear-gradient(315deg, #2d3436 0%, #131212 74%);
   color: white;
+}
+
+@media (min-width: 1200px) {
+  #bootstrap-overrides .main-container {
+    margin: 0 8rem;
+  }
 }
 
 img {
