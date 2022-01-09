@@ -28,7 +28,7 @@
   <div class="row">
     <div class="col-sm-6 mt-5">
       <div class="form-group">
-        <label for="name">NOM & PRENOM</label>
+        <label for="name">NAME</label>
         <input class="form-control" type="text" name="name" />
       </div>
       <div class="form-group">
@@ -36,11 +36,11 @@
         <input class="form-control" type="text" name="email" />
       </div>
       <div class="form-group">
-        <label for="phone">NO. PORTABLE</label>
+        <label for="phone">PHONE NO.</label>
         <input class="form-control" type="text" name="phone" />
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">COMMENTAIRE</label>
+        <label for="exampleFormControlTextarea1">COMMENT</label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
       </div>
       <input type="submit" class="btn btn-outline-warning btn-lg float-right" value="SUBMIT" />
