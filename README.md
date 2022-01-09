@@ -1,6 +1,14 @@
 # e-commerce-project 2022
-CCI project site e-commerce
-Payment option with paypal, database connection with mysql
+## CCI project site e-commerce
+<ul>
+<li>Payment option with paypal </li>
+<li>Database connection with mysql</li>
+<li>Mobile Responsive</li>
+<li>Front and Back Office</li>
+</ul>
 
-
+## Desktop version (cart page)(Panier)
 ![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/Screenshot.png?raw=true)
+
+## Mobile version (home page) (Accueil)
+![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile.png?raw=true)
