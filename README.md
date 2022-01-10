@@ -1,5 +1,5 @@
 # e-commerce-project 2022 - Vanilla PHP
-## CCI project site e-commerce 
+## Project site e-commerce for CCI du Cher, France
 <ul>
 <li>Payment option with paypal </li>
 <li>Database connection with mysql</li>
