@@ -17,13 +17,13 @@
 
 .dots {
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
 }
 
-.dots__dot {
+.dot {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
