@@ -1,5 +1,5 @@
-# e-commerce-project 2022
-## CCI project site e-commerce
+# e-commerce-project 2022 - Vanilla PHP
+## CCI project site e-commerce 
 <ul>
 <li>Payment option with paypal </li>
 <li>Database connection with mysql</li>
