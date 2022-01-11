@@ -1,4 +1,4 @@
-const slider = () => {
+(function slider() {
   const slides = document.querySelectorAll(".c__slide");
   const dotContainer = document.querySelector(".dots");
 
@@ -43,5 +43,4 @@ const slider = () => {
       goToSlide(slideNumber);
     }
   });
-};
-slider();
+})();
