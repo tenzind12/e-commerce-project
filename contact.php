@@ -25,31 +25,10 @@
   </div>
 
   <!-- second section -->
-  <div class="row">
-    <div class="col-sm-6 mt-5">
-      <div class="form-group">
-        <label for="name">NOM & PRENOM</label>
-        <input class="form-control" type="text" name="name" />
-      </div>
-      <div class="form-group">
-        <label for="email">E-MAIL</label>
-        <input class="form-control" type="text" name="email" />
-      </div>
-      <div class="form-group">
-        <label for="phone">NO. PORTABLE</label>
-        <input class="form-control" type="text" name="phone" />
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">COMMENTAIRE</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <input type="submit" class="btn btn-outline-warning btn-lg float-right" value="SUBMIT" />
-    </div>
-
-    <div class="col-sm-2"></div>
-
+  <div class="row px-5">
+    
     <address class="col-sm-4 mt-5 lead">
-      <h3>Company Information</h3>
+      <h2 class='text-warning'>Contact Information</h2>
       <p>500 rue du Lorem Ipsum</p>
       <p>12345 Lorem</p>
       <p>France</p>
@@ -61,6 +40,37 @@
         <u>Facebook</u>,<u> Instagram</u>
       </p>
     </address>
+
+    <div class="col-sm-2"></div>
+
+
+    <?php
+      if($_SERVER['REQUEST_METHOD']== 'POST') {
+        $name     = $_POST['name'];
+        $phone    = $_POST['phone'];
+        $comment  = $_POST['comment'];
+
+        $commentInsert = $cmmt->insertData($name, $phone, $comment);
+      }
+    ?>
+    <form class="col-sm-6 mt-5" method="post" action="">
+      <h2 class='text-warning'>Leave a feedback?</h2>
+      <div class="form-group">
+        <label for="name">NAME</label>
+        <input class="form-control" type="text" name="name" />
+      </div>
+      <div class="form-group">
+        <label for="phone">TELEPHONE NO.</label>
+        <input class="form-control" type="text" name="phone" />
+      </div>
+      <div class="form-group">
+        <label for="comment">COMMENT</label>
+        <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <input type="submit" name='submit' class="btn btn-outline-warning btn-lg float-right" value="SUBMIT" />
+      <?= isset($commentInsert) ? $commentInsert : '' ?>
+    </form>
+
   </div>
 </div>
 

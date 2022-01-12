@@ -11,13 +11,14 @@
         include_once ($filepath."/../core/classes/" .$class .".class.php");
     });
 
-    $db     = new Database();
-    $fm     = new Format();
-    $course = new Course();
-    $cart   = new Cart();
-    $user   = new User();
-    $order  = new Order();
-    $search = new Search();
+    $db      = new Database();
+    $fm      = new Format();
+    $course  = new Course();
+    $cart    = new Cart();
+    $user    = new User();
+    $order   = new Order();
+    $search  = new Search();
+    $cmmt = new Comment();
 ?>
 
 <!DOCTYPE html>
