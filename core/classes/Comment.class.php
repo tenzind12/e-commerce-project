@@ -15,10 +15,11 @@ include_once ($filepath.'/../helpers/Format.php');
             $this->fm = new Format();
         }
 
-        public function insertData($name, $phone, $comment) {
+        public function insertData($name, $phone, $rating, $comment) {
             $name    = $this->fm->validation($name);
             $phone   = $this->fm->validate_phone_number($phone);
             $comment = $this->fm->validation($comment);
+            $rating  = (int)$rating;
 
             if($phone == false) {
                 $msg = "<p class='text-danger'>Please check the phone number</p>";
@@ -31,7 +32,7 @@ include_once ($filepath.'/../helpers/Format.php');
             }
 
 
-            $query = "INSERT INTO tbl_comment VALUES (null,'$name', '$phone', '$comment')";
+            $query = "INSERT INTO tbl_comment VALUES (null,'$name', '$phone', '$rating', '$comment')";
             $commentInsert = $this->db->insert($query);
 
             if($commentInsert) {

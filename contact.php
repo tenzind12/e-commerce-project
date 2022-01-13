@@ -49,8 +49,9 @@
         $name     = $_POST['name'];
         $phone    = $_POST['phone'];
         $comment  = $_POST['comment'];
+        $rating   = $_POST['rating'];
 
-        $commentInsert = $cmmt->insertData($name, $phone, $comment);
+        $commentInsert = $cmmt->insertData($name, $phone, $rating, $comment);
       }
     ?>
     <form class="col-sm-6 mt-5" method="post" action="">
@@ -63,6 +64,17 @@
         <label for="phone">TELEPHONE NO.</label>
         <input class="form-control" type="text" name="phone" />
       </div>
+      <div class="form-group">
+        <label for="rating">CHOOSE A RATING</label>
+        <select name="rating">
+          <option value="5">★★★★★</option>
+          <option value="4">★★★★</option>
+          <option value="3">★★★</option>
+          <option value="2">★★</option>
+          <option value="1">★</option>
+        </select>
+      </div>
+          
       <div class="form-group">
         <label for="comment">COMMENT</label>
         <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
