@@ -43,4 +43,10 @@ include_once ($filepath.'/../helpers/Format.php');
                 return $msg;
             }
         }
+
+        public function getComments() {
+            $query  = "SELECT * FROM tbl_comment ORDER BY id DESC";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }

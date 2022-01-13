@@ -64,23 +64,36 @@
 
     <!------------- SLIDER ------------>
     <div class="my-4 text-center comment-slider">
-        <div class="c__slide slide--1">
-            <div class="testimonial">
-                <h2>Best decision ever</h2>
-                <blockquote>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
-                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
-                    porro, error possimus voluptas atque similique dignissimos voluptates
-                    quod in id fugit!
-                </blockquote>
-                <address>
-                    <h6>Customer Name</h6>
-                    <p>CityName <span>country</span></p>
-                </address>
-            </div>
-        </div>
 
-        <div class="c__slide slide--2">
+        <?php 
+            $comments = $cmmt->getComments();
+            if($comments) {
+                $i = 0;
+                while($rows = $comments->fetch()) {
+                    $i++;
+        ?>
+            <div class="c__slide slide--<?= $i ?>">
+                <div class="testimonial">
+                    <h2 class="text-warning"><?php 
+                            $rating = $rows['rating'];
+                            for($i = 0; $i < $rating; $i++) {
+                                echo '★';
+                            }
+                    ?></h2>
+                    <blockquote>
+                        <?= $rows['comment'] ?>
+                    </blockquote>
+                    <address>
+                        <h3><u><?= strtoupper($rows['cus_name']) ?></u></h3>
+                        <!-- <p>CityName <span>country</span></p> -->
+                    </address>
+                </div>
+            </div>
+        <?php
+                }
+            }
+        ?>
+        <!-- <div class="c__slide slide--2">
             <div class="testimonial">
                 <h2>worst decision ever</h2>
                 <blockquote>
@@ -110,7 +123,7 @@
                     <p>CityName <span>country</span></p>
                 </address>
             </div>
-        </div>
+        </div> -->
 
         <div class="dots"></div>
     </div>
