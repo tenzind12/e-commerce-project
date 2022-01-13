@@ -35,7 +35,7 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th class="d-flex"><span>Total</span><small>(TVA 10%)</small></th>
-                <th>Action</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody>

@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="dropdown">
+    <!-- <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" >
             Slider Option
         </button>
@@ -37,5 +37,5 @@
             <a class="dropdown-item" href="sliderAdd.php">Add Slider</a>
             <a class="dropdown-item" href="sliderList.php">Slider List</a>
         </div>
-    </div>
+    </div> -->
 </div>
