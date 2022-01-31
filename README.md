@@ -11,10 +11,7 @@
 ![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/Screenshot.png?raw=true)
 
 ## Mobile version (home page) (Accueil)
-<p width="50%">
-![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile.png?raw=true)</p>
+![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile.png?raw=true)
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-<p width="50%">
 ![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile1.png?raw=true)
-</p>
