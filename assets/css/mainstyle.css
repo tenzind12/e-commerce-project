@@ -21,6 +21,7 @@ html {
   letter-spacing: 0.5px;
 }
 
+/* tag seperator corner design */
 .corner-design {
   background: url("../../img/corner-design.png") no-repeat;
 
