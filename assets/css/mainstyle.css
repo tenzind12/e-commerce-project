@@ -29,13 +29,8 @@ html {
   /* filter: invert(100%); */
 }
 
-/* body  */
-body {
-  /* background: url(../../img/bg.jpg) center/cover fixed; */
-}
-
-#bootstrap-overrides .main-container {
-}
+/* #bootstrap-overrides .main-container {
+} */
 
 @media (min-width: 1200px) {
   #bootstrap-overrides .main-container {
