@@ -71,7 +71,7 @@
 
         <!-- COURSES PURCHASED -->
         <div class="shadow-lg">
-            <h2 class="border border-secondary py-4 pl-5 bg-dark rounded text-success">COURSES YOU PURCHASED</h2>
+            <h2 class="border border-secondary py-4 pl-5 bg-dark rounded text-success corner-design">COURSES YOU PURCHASED</h2>
             <div class="row p-3 d-flex justify-content-around">
 
             <?php

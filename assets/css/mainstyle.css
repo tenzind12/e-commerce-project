@@ -18,18 +18,23 @@ html {
   margin: 0;
   padding: 0;
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  font-weight: 300;
   letter-spacing: 0.5px;
+}
+
+.corner-design {
+  background: url("../../img/corner-design.png") no-repeat;
+
+  background-position: left left;
+  background-size: contain;
+  /* filter: invert(100%); */
 }
 
 /* body  */
 body {
-  background: url(../../img/bg.jpg) center/cover fixed;
+  /* background: url(../../img/bg.jpg) center/cover fixed; */
 }
 
 #bootstrap-overrides .main-container {
-  background-color: #000000c0;
-  color: white;
 }
 
 @media (min-width: 1200px) {

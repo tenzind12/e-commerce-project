@@ -4,8 +4,77 @@
 <!-- 6ie139d7v0ccobk84l5p3h3bcm -->
 <div class="main mx-3 mx-lg-0">
 
+    <h2 class="border border-secondary py-4 pl-5 bg-dark text-light rounded corner-design">CUSTOMER FEEDBACKS</h2>
+    <!------------- SLIDER ------------>
+    <div class="comment-container">
+        <div class="my-4 text-center comment-slider">
+
+            <?php 
+                $comments = $cmmt->getComments();
+                if($comments) {
+                    $i = 0;
+                    while($rows = $comments->fetch()) {
+                        $i++;
+            ?>
+                <div class="c__slide slide--<?= $i ?>">
+                    <div class="testimonial">
+                        <h2 class="text-warning"><?php 
+                                $rating = $rows['rating'];
+                                for($i = 0; $i < $rating; $i++) {
+                                    echo '★';
+                                }
+                        ?></h2>
+                        <blockquote>
+                            <?= $rows['comment'] ?>
+                        </blockquote>
+                        <address>
+                            <h3><u><?= strtoupper($rows['cus_name']) ?></u></h3>
+                            <!-- <p>CityName <span>country</span></p> -->
+                        </address>
+                    </div>
+                </div>
+            <?php
+                    }
+                }
+            ?>
+            <!-- <div class="c__slide slide--2">
+                <div class="testimonial">
+                    <h2>worst decision ever</h2>
+                    <blockquote>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                        ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
+                        porro, error possimus voluptas atque similique dignissimos voluptates
+                        quod in id fugit!
+                    </blockquote>
+                    <address>
+                        <h6>Customer Name</h6>
+                        <p>Paris <span>France</span></p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="c__slide slide--3">
+                <div class="testimonial">
+                    <h2>Best decision ever</h2>
+                    <blockquote>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
+                        ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
+                        porro, error possimus voluptas atque similique dignissimos voluptates
+                        quod in id fugit!
+                    </blockquote>
+                    <address>
+                        <h6>Customer Name</h6>
+                        <p>CityName <span>country</span></p>
+                    </address>
+                </div>
+            </div> -->
+
+            <div class="dots"></div>
+        </div>
+    </div>
+
     <!----------------- FEATURED COURSES ---------------------------->
-    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">FEATURED PRODUCTS</h2>
+    <h2 class="border border-secondary py-4 pl-5 bg-dark text-light rounded corner-design">FEATURED PRODUCTS</h2>
 
     <div class="d-sm-flex my-4 text-center">
 
@@ -16,7 +85,7 @@
         ?>
                     <div class="shadow-lg mx-2 pt-3 border border-dark">
                         <a href="preview.php?id=<?= $rows['courseId']?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>" class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
-                        <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
+                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
                         <p class="mt-5"><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
                             <span class="text-danger">€<?= $rows['price'] ?></span>
@@ -33,7 +102,7 @@
     </div>
 
     <!----------------- NEW COURSES ---------------------------->
-    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">NEW PRODUCTS</h2>
+    <h2 class="border border-secondary py-4 pl-5 bg-dark text-light rounded corner-design">NEW PRODUCTS</h2>
 
     <div class="d-sm-flex my-4 text-center">
 
@@ -44,7 +113,7 @@
         ?>
                     <div class="shadow-lg mx-2 pt-3 border border-dark">
                         <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="<?= $rows['courseName'] ?>"  class="w-100 image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
-                        <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
+                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
                         <p class="mt-5"><?= $fm->shortenText($rows['description'], 100) ?></p>
                         <p>
                             <span class="text-danger">€<?= $rows['price'] ?></span>
@@ -58,76 +127,7 @@
             }
         ?>
 
-    </div>
-
-    <h2 class="border border-secondary py-4 pl-5 bg-dark rounded">CUSTOMER FEEDBACKS</h2>
-
-    <!------------- SLIDER ------------>
-    <div class="my-4 text-center comment-slider">
-
-        <?php 
-            $comments = $cmmt->getComments();
-            if($comments) {
-                $i = 0;
-                while($rows = $comments->fetch()) {
-                    $i++;
-        ?>
-            <div class="c__slide slide--<?= $i ?>">
-                <div class="testimonial">
-                    <h2 class="text-warning"><?php 
-                            $rating = $rows['rating'];
-                            for($i = 0; $i < $rating; $i++) {
-                                echo '★';
-                            }
-                    ?></h2>
-                    <blockquote>
-                        <?= $rows['comment'] ?>
-                    </blockquote>
-                    <address>
-                        <h3><u><?= strtoupper($rows['cus_name']) ?></u></h3>
-                        <!-- <p>CityName <span>country</span></p> -->
-                    </address>
-                </div>
-            </div>
-        <?php
-                }
-            }
-        ?>
-        <!-- <div class="c__slide slide--2">
-            <div class="testimonial">
-                <h2>worst decision ever</h2>
-                <blockquote>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
-                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
-                    porro, error possimus voluptas atque similique dignissimos voluptates
-                    quod in id fugit!
-                </blockquote>
-                <address>
-                    <h6>Customer Name</h6>
-                    <p>Paris <span>France</span></p>
-                </address>
-            </div>
-        </div>
-
-        <div class="c__slide slide--3">
-            <div class="testimonial">
-                <h2>Best decision ever</h2>
-                <blockquote>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis 
-                    ipsam molestiae vitae ea laudantium. Recusandae neque harum voluptatem
-                    porro, error possimus voluptas atque similique dignissimos voluptates
-                    quod in id fugit!
-                </blockquote>
-                <address>
-                    <h6>Customer Name</h6>
-                    <p>CityName <span>country</span></p>
-                </address>
-            </div>
-        </div> -->
-
-        <div class="dots"></div>
-    </div>
-    
+    </div>    
 </div>
 
 

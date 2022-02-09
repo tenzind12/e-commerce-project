@@ -37,10 +37,12 @@
   setInterval(() => nextSlide(), 5000);
 
   // button slider
-  dotContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("dots__dot")) {
-      const slideNumber = e.target.dataset.slide;
-      goToSlide(slideNumber);
-    }
-  });
+  if (dotContainer) {
+    dotContainer.addEventListener("click", function (e) {
+      if (e.target.classList.contains("dots__dot")) {
+        const slideNumber = e.target.dataset.slide;
+        goToSlide(slideNumber);
+      }
+    });
+  }
 })();

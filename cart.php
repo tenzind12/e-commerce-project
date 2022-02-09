@@ -118,7 +118,7 @@
 
 
 <!-- testing/ delete if not good -->
-<h2 class="text-white border bg-secondary py-4 pl-5 mt-5">RECOMMENDED PRODUCTS FOR YOU</h2>
+<h2 class="text-white border bg-dark py-4 pl-5 mt-5 corner-design">RECOMMENDED PRODUCTS FOR YOU</h2>
 
     <div class="d-sm-flex my-4 text-center">
         
@@ -129,7 +129,7 @@
                     ?>
                     <div class="shadow-lg m-2 pt-3 rounded">
                         <a href="preview.php?id=<?= $rows['courseId'] ?>"><img src="admin/<?= $rows['image'] ?>" alt="html" class="w-100 border image-hover" style="max-width:269px; height:auto; max-height:151px"></a>
-                        <h3 class="bg-dark"><?= $rows['courseName'] ?></h3>
+                        <h3 class="bg-dark text-light"><?= $rows['courseName'] ?></h3>
                         <p><?= $fm->shortenText($rows['description'], 50) ?></p>
                         <p>
                             <span class="text-danger">€<?= $rows['price'] ?></span>
