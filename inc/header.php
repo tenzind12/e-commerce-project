@@ -27,13 +27,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The best site you will ever find for learning how to code. From zero to professional level">
     <link rel="icon" href="./img/code_logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/mainstyle.css">
     <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/css/comment--slider.css">
-    <title>Easy learning - Learn at your pace - The best learning site you will ever find</title>
+    <title>Easy learning - Learn at your pace - The best learning site</title>
   </head>
   <body id="bootstrap-overrides">
       <div class="main-container px-3">

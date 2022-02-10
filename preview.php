@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <h2 class="border border-secondary p-4 bg-dark rounded">PRODUCT DETAILS</h2>
+        <h2 class="border border-secondary p-4 bg-dark rounded text-light corner-design">PRODUCT DETAILS</h2>
         <div class="my-5">
             <p><?= $rows['description'] ?></p>
         </div>
