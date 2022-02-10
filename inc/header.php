@@ -27,15 +27,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./img/code_logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/mainstyle.css">
     <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/css/comment--slider.css">
-    <title>Easy learning - Learn at your pace</title>
+    <title>Easy learning - Learn at your pace - The best learning site you will ever find</title>
   </head>
   <body id="bootstrap-overrides">
-      <div class=main-container px-3">
+      <div class="main-container px-3">
           <div class="header_top">
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <a class="navbar-brand" href="index.php"><b>Easy learning</b></a>
@@ -65,10 +66,10 @@
                         ?>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                                 Connection
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu">
                                 <!-- to dynamically display login logout button  -->
                                 <a class="dropdown-item" href="<?= Session::get('cusLogin') ? '?cusId='.Session::get('cusId') : 'login.php' ?>">
                                     <?= Session::get('cusLogin') ? 'Logout' : 'Login' ?>
@@ -104,7 +105,7 @@
                     }
                 ?>
 
-                <form class="form-inline my-2 my-lg-0" method="post" action="">
+                <form class="form-inline my-2 my-lg-0" method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
                     <input class="form-control mr-sm-2 search--fs" type="search" placeholder="Search" aria-label="Search" name="search">
                     <input class="btn btn-outline-warning my-2 my-sm-0 search--fs" type="submit" value="Search"/>
                 </form>

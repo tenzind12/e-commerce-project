@@ -111,7 +111,7 @@
               $i++;
         ?>
         <div class="carousel-item <?= $i == 1 ? 'active' : '' ?>">
-          <img class="d-block w-100" src="admin/<?= $rows['image'] ?>" style="max-height: 100%">
+          <img class="d-block w-100" src="admin/<?= $rows['image'] ?>" style="max-height: 100%" alt="<?= $rows['courseName'] ?>">
         </div>
         <?php
             }

@@ -28,23 +28,23 @@
                         <li class="list-unstyled"><a href="#">Wish List</a></li>
                         <li class="list-unstyled"><a href="#">Track my Order</a></li>
                         <li class="list-unstyled"><a href="contact.php">Help</a></li>
+                    </ul>
                 </div>
                 <div class="col-sm-3">
                     <h3>Contact</h3>
-                    <p><a href="mailto:support@easylearning.com"> support@easylearning.com</p></a>
-                    <p><a href="index.php"> www.easylearning.com</p></a>
+                    <p><a href="mailto:support@easylearning.com"> support@easylearning.com</a></p>
+                    <p><a href="index.php"> www.easylearning.com</a></p>
                     <h3>FOLLOW US</h3>
                     <ul class=" d-flex flex-wrap justify-content-sm-between">
-                        <li class="list-unstyled"><a href="#"><img src="./img/icons/facebook.svg"/></a></li>
-                        <li class="list-unstyled"><a href="#"><img src="./img/icons/instagram.svg"/></a></li>
-                        <li class="list-unstyled"><a href="#"><img src="./img/icons/youtube.svg"/></i></a></li>
-                        <li class="list-unstyled"><a href="#"><img src="./img/icons/twitter.svg"/></a></li>
-                        <li class="list-unstyled"><a href="#"><img src="./img/icons/pinterest.svg"/></a></li>
+                        <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/facebook.svg"/></a></li>
+                        <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/instagram.svg"/></a></li>
+                        <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/youtube.svg"/></a></li>
+                        <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/twitter.svg"/></a></li>
+                        <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/pinterest.svg"/></a></li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
 
     <!-- Bootstrap core JavaScript ================================================== -->
     <script src="assets/js/comment-slider.js"></script>
