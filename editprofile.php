@@ -37,7 +37,7 @@
                             </tr>
                             <tr>
                                 <td>Phone</td>
-                                <td><input type="text" name="phone" value="<?= $rows['phone'] ?>"></td>
+                                <td><input type="text" name="phone" value="0<?= $rows['phone'] ?>"></td>
                             </tr>
                             <tr>
                                 <td>Email</td>

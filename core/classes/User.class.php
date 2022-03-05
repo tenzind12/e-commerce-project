@@ -143,6 +143,11 @@ class User {
             return $msg;
         }
 
+        // PHONE AND EMAIL REGEX VALIDATION
+        if(!$this->fm->validate_phone($phone)) {
+            $msg = "<span class='text-danger d-block'>Please enter a correct phone number !</span>";
+            return $msg;
+        }
         if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
@@ -151,11 +156,11 @@ class User {
         
         // 1. updating tbl_address data 
         $addressUpdateQuery = "UPDATE tbl_address SET 
-                                `address`        = '$address',
+                                `address` = '$address',
                                 `zip`            = '$zip',
                                 `city`           = '$city',
                                 `country`        = '$country'
-                              WHERE addressId  = '$addId' ";
+                              WHERE `addressId`  = '$addId' ";
         $addressUpdate = $this->db->update($addressUpdateQuery);
 
         // 2. updating customer table 
@@ -166,10 +171,9 @@ class User {
                                WHERE clientId = '$cusId' ";
         $customerUpdate = $this->db->update($customerUpdateQuery);
 
-        if($addressUpdate && $customerUpdate) {
-            $msg = "<span class='text-success d-block'>Information successfully updated !</span>";
-            return $msg;
-        }else {
+        if ($addressUpdate && $customerUpdate) {
+            echo "<script>window.location.href='profile.php'</script>";
+        } else {
             $msg = "<span class='text-danger d-block'>Information failed to updated. Please try again !</span>";
             return $msg;
         }

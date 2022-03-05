@@ -3,9 +3,9 @@
 <div class="row my-5 mx-2">
 
     <?php
-    ini_set('display_errors', 1);
-    error_reporting('-');
-  ?>
+    // ini_set('display_errors', 1);
+    // error_reporting('-');
+    ?>
   
     <!----------------------------- Log in section ----------------->
     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
@@ -37,23 +37,23 @@
             <div class="form-group">
 
                 <div class="d-flex mb-2">
-                    <input type="text" name="name" placeholder="Name" class="form-control">
-                    <input type="text" name="address" placeholder="Address" class="form-control ml-2">
+                    <input type="text" name="name" placeholder="Name*" class="form-control">
+                    <input type="text" name="address" placeholder="Address*" class="form-control ml-2">
                 </div>
 
                 <div class="d-flex mb-2">
-                    <input type="text" name="city" placeholder="City" class="form-control">
-                    <input type="text" name="country" placeholder="Country" class="form-control ml-2">
+                    <input type="text" name="city" placeholder="City*" class="form-control">
+                    <input type="text" name="country" placeholder="Country*" class="form-control ml-2">
                 </div>
 
                 <div class="d-flex mb-2">
-                    <input type="text" name="zip" pattern="[0-9]*" placeholder="Zip-code" class="form-control">
-                    <input type="phone" name="phone" placeholder="Phone" class="form-control ml-2">
+                    <input type="text" name="zip" pattern="[0-9]*" placeholder="Zip-code*" class="form-control">
+                    <input type="phone" name="phone" placeholder="Phone*" class="form-control ml-2">
                 </div>
 
                 <div class="d-flex mb-2">
-                    <input type="text" name="email" placeholder="E-mail" class="form-control">
-                    <input type="password" name="password" placeholder="Choose a password" class="form-control ml-2">
+                    <input type="text" name="email" placeholder="E-mail*" class="form-control">
+                    <input type="password" name="password" placeholder="Choose a password*" class="form-control ml-2">
                 </div>
                 <?= isset($registration) ? $registration : "" ?>
 
