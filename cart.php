@@ -7,6 +7,7 @@
         $delCart = $cart->deleteCart($cartId);
     }
 ?>
+
 <?php
     // updating the quantity of course in cart
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -146,7 +147,9 @@
 </div>
 
 <!-- for the paypal button which is rendered in the id paypal-button below 'Continue shopping' button -->
-<script src="https://www.paypal.com/sdk/js?client-id=ATaeMt6FnUUNYFISn5oAYg8K0HJk28cVQhovqEpVF1EhcQysnSI--6T_ghblgeumOpX8WXMENaXYhUry&disable-funding=credit,card"></script>
-<script src="paypal/script.paypal.js"></script>
+<?php if (Session::get('cusLogin')) {
+    echo "<script src='https://www.paypal.com/sdk/js?client-id=ATaeMt6FnUUNYFISn5oAYg8K0HJk28cVQhovqEpVF1EhcQysnSI--6T_ghblgeumOpX8WXMENaXYhUry&disable-funding=credit,card'></script>
+<script src='paypal/script.paypal.js'></script>";
+} ?>
 
 <?php include 'inc/footer.php'; ?>

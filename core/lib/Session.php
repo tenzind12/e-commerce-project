@@ -1,6 +1,4 @@
-<?php 
-
-// session for the admin login
+<?php
 class Session {
     public static function init() {
         session_start();
@@ -22,7 +20,6 @@ class Session {
         if(!self::get('adminlogin')) self::destroy();
     }
 
-    // check login in the AdminLogin.class.php
     public static function checkLogin() {
         self::init();
         if(self::get('adminlogin')) header('Location: catList.php');
@@ -32,6 +29,4 @@ class Session {
         session_destroy();
         echo "<script>window.location='login.php';</script>"; 
     }
-}
-
-?>  
+} 

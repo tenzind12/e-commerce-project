@@ -32,13 +32,20 @@ class User {
             $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
             return $msg;
         }
-
+        
+        // PHONE validation regex (French number format)
+        if(!$this->fm->validate_phone($phone)) {
+            $msg = "<span class='text-danger d-block'>Please enter a correct phone number !</span>";
+            return $msg;
+        }
+        // EMAIL validation 
         if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
         }
 
-        // email already register or not
+
+        // email already registered or not
         $mailQuery = "SELECT * FROM tbl_customer WHERE email = '$email' LIMIT 1";
         $mailCheck = $this->db->select($mailQuery);
         if($mailCheck) {
@@ -99,7 +106,7 @@ class User {
             Session::set('cusId', $value['clientId']);
             Session::set('cusName', $value['customerName']);
             Session::set('addId', $value['addressId']);
-            header('Location: profile.php');
+            echo "<script>location.href='profile.php'</script>";
         } else {
             $msg = "<span class='text-danger d-block'>Email or password not correct !</span>";
             return $msg;

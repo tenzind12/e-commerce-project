@@ -17,7 +17,7 @@ include_once ($filepath.'/../helpers/Format.php');
 
         public function insertData($name, $phone, $rating, $comment) {
             $name    = $this->fm->validation($name);
-            $phone   = $this->fm->validate_phone_number($phone);
+            $phone   = $this->fm->validate_phone($phone);
             $comment = $this->fm->validation($comment);
             $rating  = (int)$rating;
 

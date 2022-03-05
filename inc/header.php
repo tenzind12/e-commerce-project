@@ -34,13 +34,13 @@
     <link rel="stylesheet" href="assets/css/mainstyle.css">
     <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/css/comment--slider.css">
-    <title>Easy learning - Learn at your pace - The best learning site</title>
+    <title>Code Along - Learn at your pace - The best learning site</title>
   </head>
   <body id="bootstrap-overrides">
       <div class="main-container px-3">
           <div class="header_top">
             <nav class="navbar navbar-expand-lg navbar-dark">
-                <a class="navbar-brand" href="index.php"><b>Easy learning</b></a>
+                <a class="navbar-brand" href="index.php"><b>Code Along</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -1,17 +1,19 @@
 <?php include 'inc/header.php';?>
 <?php if(Session::get('cusLogin')) header('Location: profile.php'); ?>
-
 <div class="row my-5 mx-2">
 
-    <!----------------------------- Log in section ----------------->
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-            $customerLogin = $user->customerLogin($_POST);
-        }
-    ?>
+    ini_set('display_errors', 1);
+    error_reporting('-');
+  ?>
+  
+    <!----------------------------- Log in section ----------------->
+    <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+        $customerLogin = $user->customerLogin($_POST);
+    } ?>
     <div class="col-sm-5 border border-muted py-3 my-5">
         <h2>Existing Customers</h2>
-        <form action="" method="post">
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <div class="form-group w-50">
                 <label><small>Sign in with the forms below:</small></label>
                 <input type="email" name="email" class="form-control mb-2" placeholder="Username">
@@ -45,13 +47,13 @@
                 </div>
 
                 <div class="d-flex mb-2">
-                    <input type="text" name="zip" placeholder="Zip-code" class="form-control">
-                    <input type="text" name="phone" placeholder="Phone" class="form-control ml-2">
+                    <input type="text" name="zip" pattern="[0-9]*" placeholder="Zip-code" class="form-control">
+                    <input type="phone" name="phone" placeholder="Phone" class="form-control ml-2">
                 </div>
 
                 <div class="d-flex mb-2">
                     <input type="text" name="email" placeholder="E-mail" class="form-control">
-                    <input type="text" name="password" placeholder="Password" class="form-control ml-2">
+                    <input type="password" name="password" placeholder="Choose a password" class="form-control ml-2">
                 </div>
                 <?= isset($registration) ? $registration : "" ?>
 

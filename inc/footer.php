@@ -32,8 +32,8 @@
                 </div>
                 <div class="col-sm-3">
                     <h3>Contact</h3>
-                    <p><a href="mailto:support@easylearning.com"> support@easylearning.com</a></p>
-                    <p><a href="index.php"> www.easylearning.com</a></p>
+                    <p><a href="#">support@codealong.com</a></p>
+                    <p><a href="#">www.codealong.com</a></p>
                     <h3>FOLLOW US</h3>
                     <ul class=" d-flex flex-wrap justify-content-sm-between">
                         <li class="list-unstyled"><a href="#"><img alt="icon" src="./img/icons/facebook.svg"/></a></li>

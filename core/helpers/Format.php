@@ -17,12 +17,19 @@ class Format {
     }
 
     // French phone number validation regex
-    public function validate_phone_number($phone) {
-        $filtered_num = preg_match('/^[0-9]{10}+$/', $phone);
-        if($filtered_num) {
-            return $phone;
-        }else {
-            return false;
-        }
+    // public function validate_phone_number($phone) {
+    //     $filtered_num = preg_match('/^[0-9]{10}+$/', $phone);
+    //     if($filtered_num) {
+    //         return $phone;
+    //     }else {
+    //         return false;
+    //     }
+    // }
+
+    // French phone number validation regex
+    public function validate_phone($phone) {
+        $isValidated = preg_match('/^(?:(?:\+|00)33[\s.-]{0,3}(?:\(0\)[\s.-]{0,3})?|0)[1-9](?:(?:[\s.-]?\d{2}){4}|\d{2}(?:[\s.-]?\d{3}){2})$/', $phone);
+        if($isValidated) return $phone;
+        else return false;
     }
 }
