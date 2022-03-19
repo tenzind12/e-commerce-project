@@ -178,4 +178,15 @@ class User {
             return $msg;
         }
     }
+
+    // G E T   A L L   U S E R L I S T S  for the admin page
+    public function getAlluser() {
+        $query = "SELECT tbl_customer.*, tbl_address.*
+            FROM tbl_customer
+            INNER JOIN tbl_address
+            ON tbl_customer.clientId = tbl_address.addressId
+            ORDER BY tbl_customer.clientId DESC";
+        $result = $this->db->select($query);
+        return $result;
+    }
 }

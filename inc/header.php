@@ -3,12 +3,10 @@
     Session::init();
     include_once ('core/lib/Database.php');
 
-    $filepath = realpath(dirname(__FILE__));
-    include ($filepath.'/../core/helpers/Format.php');
+    include (__DIR__.'/../core/helpers/Format.php');
 
     spl_autoload_register(function($class) {
-        $filepath = realpath(dirname(__FILE__));
-        include_once ($filepath."/../core/classes/" .$class .".class.php");
+        include_once (__DIR__."/../core/classes/" .$class .".class.php");
     });
 
     $db      = new Database();
