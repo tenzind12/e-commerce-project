@@ -18,7 +18,7 @@
         <?php
             $users = new User();
             $getUsers = $users->getAlluser();
-            if($users) {
+            if($getUsers) {
                 $i = 0;
                 while($row = $getUsers->fetch()) {
                     $i++;

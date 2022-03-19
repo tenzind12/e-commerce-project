@@ -184,7 +184,7 @@ class User {
         $query = "SELECT tbl_customer.*, tbl_address.*
             FROM tbl_customer
             INNER JOIN tbl_address
-            ON tbl_customer.clientId = tbl_address.addressId
+            ON tbl_customer.addressId = tbl_address.addressId
             ORDER BY tbl_customer.clientId DESC";
         $result = $this->db->select($query);
         return $result;

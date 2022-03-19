@@ -29,7 +29,6 @@
                         </blockquote>
                         <address>
                             <p><u><?= strtoupper($rows['cus_name']) ?></u></p>
-                            <!-- <p>CityName <span>country</span></p> -->
                         </address>
                     </div>
                 </div>
