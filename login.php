@@ -1,11 +1,6 @@
 <?php include 'inc/header.php';?>
 <?php if(Session::get('cusLogin')) header('Location: profile.php'); ?>
 <div class="row my-5 mx-2">
-
-    <?php
-    // ini_set('display_errors', 1);
-    // error_reporting('-');
-    ?>
   
     <!----------------------------- Log in section ----------------->
     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {

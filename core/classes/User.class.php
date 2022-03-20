@@ -17,6 +17,17 @@ class User {
         
     // --------------------------- new Customer registration
     public function registration($data) {
+        if($data['name'] == "" || $data['address'] == "" || $data['city'] == "" || $data['country'] == "" || $data['zip'] == "" || $data['phone'] == "" || $data['email'] == "" || $data['password'] == "") {
+            $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
+            return $msg;
+        }
+
+
+        // P A S S W O R D   V A L I D A T I O N 
+        if(strlen($data['password']) < 6) {
+            $msg = "<span class='text-danger d-block'>Password must be atleast 6 characters long !</span>";
+            return $msg;
+        }
         // customer table
         $name     = $this->fm->validation($data['name']);
         $phone    = $this->fm->validation($data['phone']);
@@ -28,21 +39,18 @@ class User {
         $country  = $this->fm->validation($data['country']);
         $zip      = $this->fm->validation($data['zip']);
 
-        if($name == "" || $address == "" || $city == "" || $country == "" || $zip == "" || $phone == "" || $email == "" || $password == "") {
-            $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
-            return $msg;
-        }
         
-        // PHONE validation regex (French number format)
+        // P H O N E  V A L I D A T I O N regex (French number format)
         if(!$this->fm->validate_phone($phone)) {
             $msg = "<span class='text-danger d-block'>Please enter a correct phone number !</span>";
             return $msg;
         }
-        // EMAIL validation 
+        // E M A I L  V A L I D A T I O N 
         if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
         }
+
 
 
         // email already registered or not
