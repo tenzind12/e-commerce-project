@@ -1,7 +1,7 @@
-<?php include 'inc/header.php';?>
-<?php if(Session::get('cusLogin')) header('Location: profile.php'); ?>
+<?php include 'inc/header.php'; ?>
+<?php if (Session::get('cusLogin')) header('Location: profile.php'); ?>
 <div class="row my-5 mx-2">
-  
+
     <!----------------------------- Log in section ----------------->
     <?php if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
         $customerLogin = $user->customerLogin($_POST);
@@ -16,15 +16,15 @@
             </div>
             <?= isset($customerLogin) ? $customerLogin : "" ?>
             <input type="submit" name="login" value="Sign in" class="btn-lg btn-dark">
-            <p class="text-muted my-5"><i><small>If you forgot your passoword just enter your email and  <a href="#">click here</i></small></a>.</p>
+            <p class="text-muted my-5"><i><small>If you forgot your passoword just enter your email and <a href="forgotPassword.php">click here</i></small></a>.</p>
         </form>
     </div>
 
     <!------------------------------ Sign up section ----------------->
     <?php
-        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
-            $registration = $user->registration($_POST);
-        }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
+        $registration = $user->registration($_POST);
+    }
     ?>
     <div class="col-sm-7 border border-muted py-3 my-5">
         <h2>Register New Account</h2>
@@ -60,4 +60,4 @@
 </div>
 <div class="border-bottom mb-3"></div>
 
-<?php include 'inc/footer.php';?>
+<?php include 'inc/footer.php'; ?>

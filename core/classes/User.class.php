@@ -1,30 +1,33 @@
 <?php
 $filepath = realpath(dirname(__FILE__));
-include_once ($filepath.'/../lib/Database.php');
-include_once ($filepath.'/../helpers/Format.php');
+include_once($filepath . '/../lib/Database.php');
+include_once($filepath . '/../helpers/Format.php');
 ?>
 
 <?php
-class User {
+class User
+{
     private $db;
     private $fm;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->db = new Database();
         $this->fm = new Format();
     }
 
-        
+
     // --------------------------- new Customer registration
-    public function registration($data) {
-        if($data['name'] == "" || $data['address'] == "" || $data['city'] == "" || $data['country'] == "" || $data['zip'] == "" || $data['phone'] == "" || $data['email'] == "" || $data['password'] == "") {
+    public function registration($data)
+    {
+        if ($data['name'] == "" || $data['address'] == "" || $data['city'] == "" || $data['country'] == "" || $data['zip'] == "" || $data['phone'] == "" || $data['email'] == "" || $data['password'] == "") {
             $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
             return $msg;
         }
 
 
         // P A S S W O R D   V A L I D A T I O N 
-        if(strlen($data['password']) < 6) {
+        if (strlen($data['password']) < 6) {
             $msg = "<span class='text-danger d-block'>Password must be atleast 6 characters long !</span>";
             return $msg;
         }
@@ -39,14 +42,14 @@ class User {
         $country  = $this->fm->validation($data['country']);
         $zip      = $this->fm->validation($data['zip']);
 
-        
+
         // P H O N E  V A L I D A T I O N regex (French number format)
-        if(!$this->fm->validate_phone($phone)) {
+        if (!$this->fm->validate_phone($phone)) {
             $msg = "<span class='text-danger d-block'>Please enter a correct phone number !</span>";
             return $msg;
         }
         // E M A I L  V A L I D A T I O N 
-        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
         }
@@ -56,10 +59,10 @@ class User {
         // email already registered or not
         $mailQuery = "SELECT * FROM tbl_customer WHERE email = '$email' LIMIT 1";
         $mailCheck = $this->db->select($mailQuery);
-        if($mailCheck) {
+        if ($mailCheck) {
             $msg = "<span class='text-danger d-block'>Email already registered !</span>";
             return $msg;
-        }else {
+        } else {
             // 1. entering data to tbl_address first
             $addressTableQuery = "INSERT INTO tbl_address(`address`, `zip`, `city`, `country`)
              VALUES('$address', '$zip', '$city', '$country')";
@@ -75,10 +78,10 @@ class User {
              VALUES('$name', '$email', '$phone', '$password', '$addId')";
             $customerInsert = $this->db->insert($customerTableQuery);
 
-            if($addressInsert && $customerInsert) {
+            if ($addressInsert && $customerInsert) {
                 $msg = "<span class='text-success d-block'>Account successfully created !</span>";
                 return $msg;
-            }else {
+            } else {
                 $msg = "<span class='text-danger d-block'>Account could not be created. Please try again !</span>";
                 return $msg;
             }
@@ -86,16 +89,17 @@ class User {
     }
 
     // --------------------------- for loggin in existing customer
-    public function customerLogin($data) {
+    public function customerLogin($data)
+    {
         $email = $this->fm->validation($data['email']);
         $password = $this->fm->validation($data['password']);
 
-        if(empty($email) || empty($password)) {
+        if (empty($email) || empty($password)) {
             $msg = "<span class='text-danger d-block'>Please fill both fields</span>";
             return $msg;
         }
 
-        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
         }
@@ -106,9 +110,9 @@ class User {
                     INNER JOIN tbl_address 
                     ON tbl_customer.addressId = tbl_address.addressId 
                     WHERE email = '$email' 
-                    AND `password` = md5('$password')"; 
+                    AND `password` = md5('$password')";
         $result = $this->db->select($query);
-        if($result) {
+        if ($result) {
             $value = $result->fetch();
             Session::set('cusLogin', true);
             Session::set('cusId', $value['clientId']);
@@ -122,7 +126,8 @@ class User {
     }
 
     // --------------------------- get all customer details from two tables (tbl_customer and tbl_address)
-    public function getCustomerDetails($id) {
+    public function getCustomerDetails($id)
+    {
         $query = "SELECT tbl_customer.*, tbl_address.*
          FROM tbl_customer 
          INNER JOIN tbl_address 
@@ -135,7 +140,8 @@ class User {
 
 
     // ---------------------------- Updating customer information from profile.php
-    public function updateCustomerInfo($data, $cusId, $addId) {
+    public function updateCustomerInfo($data, $cusId, $addId)
+    {
         // customer table
         $name     = $this->fm->validation($data['name']);
         $phone    = $this->fm->validation($data['phone']);
@@ -146,22 +152,22 @@ class User {
         $country  = $this->fm->validation($data['country']);
         $zip      = $this->fm->validation($data['zip']);
 
-        if($name == "" || $address == "" || $city == "" || $country == "" || $zip == "" || $phone == "" || $email == "") {
+        if ($name == "" || $address == "" || $city == "" || $country == "" || $zip == "" || $phone == "" || $email == "") {
             $msg = "<span class='text-danger d-block'>All fields must be filled !</span>";
             return $msg;
         }
 
         // PHONE AND EMAIL REGEX VALIDATION
-        if(!$this->fm->validate_phone($phone)) {
+        if (!$this->fm->validate_phone($phone)) {
             $msg = "<span class='text-danger d-block'>Please enter a correct phone number !</span>";
             return $msg;
         }
-        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
             $msg = "<span class='text-danger d-block'>Please enter a correct email !</span>";
             return $msg;
         }
 
-        
+
         // 1. updating tbl_address data 
         $addressUpdateQuery = "UPDATE tbl_address SET 
                                 `address` = '$address',
@@ -187,8 +193,17 @@ class User {
         }
     }
 
-    // G E T   A L L   U S E R L I S T S  for the admin page
-    public function getAlluser() {
+    // --------- R E S E T   T H E   P A S S W O R D -------------- //
+    public function getByEmail($email)
+    {
+        $query = "SELECT * FROM tbl_customer WHERE email = '$email' ";
+        $customer = $this->db->select($query);
+        return $customer;
+    }
+
+    // G E T   A L L   U S E R L I S T S  for the << A D M I N >>  page
+    public function getAlluser()
+    {
         $query = "SELECT tbl_customer.*, tbl_address.*
             FROM tbl_customer
             INNER JOIN tbl_address
