@@ -1,0 +1,8 @@
+#stripe-button {
+  cursor: pointer;
+  background-color: teal;
+  color: white;
+  height: 32px;
+  padding: 3px 46px;
+  margin-left: 12px;
+}
