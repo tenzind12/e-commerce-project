@@ -1,8 +1,13 @@
-# e-commerce-project
-CCI project site e-commerce
+# CCI project site e-commerce
 
-# e-commerce-project 2022 - Vanilla PHP
-## Project site e-commerce for CCI du Cher, France
+![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
+![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+e-commerce-project 2022 - Vanilla PHP
+
 <ul>
 <li>Payment option with paypal </li>
 <li>Database connection with mysql</li>
@@ -10,11 +15,9 @@ CCI project site e-commerce
 <li>Front and Back Office</li>
 </ul>
 
-## Desktop version (cart page)(Panier)
-![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/Screenshot.png?raw=true)
+### admin/login.php
 
-## Mobile version (home page) (Accueil)
-![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile.png?raw=true)
-&nbsp;&nbsp;&nbsp;&nbsp;
+> id : admin  
+> password : 123
 
-![alt text](https://github.com/tenzind12/e-commerce-project/blob/master/img/mobile1.png?raw=true)
+SQL file is in the S Q L - F O L D E R at the root level
